@@ -81,7 +81,7 @@ nav .container {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0; /* Changed to left for LTR */
+    left: 0;
     width: 0;
     height: 2px;
     background: #e74c3c;
@@ -278,7 +278,7 @@ nav .container {
     color: #e74c3c;
     opacity: 0.1;
     position: absolute;
-    right: 15px; /* Changed from left for LTR */
+    right: 15px; /* Positioned to the right for LTR */
     top: 15px;
     z-index: 0;
 }
@@ -342,7 +342,7 @@ nav .container {
     font-size: 3rem;
     color: #ffcc00; /* A golden color for quotes */
     margin-bottom: 1.5rem;
-    text-align: left; /* Changed from right for LTR */
+    text-align: left;
 }
 
 .testimonial-card p {
@@ -391,7 +391,7 @@ nav .container {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%; /* Remains left for LTR animation to slide left to right */
+    left: -100%; /* For LTR animation to slide left to right */
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(231, 76, 60, 0.1), transparent);
@@ -399,7 +399,7 @@ nav .container {
 }
 
 .service-card:hover::before {
-    left: 100%; /* Remains left for LTR animation to slide left to right */
+    left: 100%; /* For LTR animation to slide left to right */
 }
 
 .service-icon {
@@ -423,7 +423,7 @@ nav .container {
 
 .service-features {
     list-style: none;
-    text-align: left; /* Explicitly left-align for lists */
+    text-align: left;
     margin-top: 2rem;
 }
 
@@ -490,66 +490,6 @@ nav .container {
     color: #2f2f7d;
 }
 
-
-/* About Page (existing - no major changes needed here for now, assuming its English already) */
-.about-page {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    margin-bottom: 4rem;
-}
-
-.about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #2f2f7d;
-}
-
-.about-text p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-}
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
-}
-
-.stat {
-    text-align: center;
-    padding: 2rem;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(47, 47, 125, 0.1);
-    transition: all 0.3s ease;
-}
-
-.stat:hover {
-    transform: translateY(-5px);
-}
-
-.stat-number {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #e74c3c;
-    margin-bottom: 0.5rem;
-}
-
-.stat-label {
-    color: #2f2f7d;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
 /* Contact Page */
 .contact-page {
     background: linear-gradient(135deg, #2f2f7d 0%, #e74c3c 100%);
@@ -562,7 +502,7 @@ nav .container {
 }
 
 .contact-info {
-    max-width: 900px; /* Wider for form */
+    max-width: 900px;
     margin: 0 auto;
     padding: 2rem 3rem;
     background: rgba(255,255,255,0.1);
@@ -580,7 +520,7 @@ nav .container {
     list-style: none;
     margin-bottom: 3rem;
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
     padding-bottom: 2rem;
@@ -597,11 +537,11 @@ nav .container {
     backdrop-filter: blur(10px);
     width: fit-content;
     margin: 0 auto;
-    color: white; /* Ensure text is white */
+    color: white;
 }
 
 .contact-details li a {
-    color: inherit; /* Inherit white color */
+    color: inherit;
     text-decoration: none;
 }
 .contact-details li a:hover {
@@ -609,7 +549,7 @@ nav .container {
 }
 
 .contact-details i {
-    margin-right: 1.5rem; /* Changed from margin-left for LTR */
+    margin-right: 1.5rem; /* Icon to the left of text in LTR */
     font-size: 1.5rem;
     width: 40px;
     text-align: center;
@@ -624,7 +564,7 @@ nav .container {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    text-align: left; /* Changed from right for LTR */
+    text-align: left;
 }
 
 .contact-form input,
@@ -638,7 +578,7 @@ nav .container {
     font-size: 1.1rem;
     outline: none;
     transition: background 0.3s ease;
-    text-align: left; /* LTR input */
+    text-align: left;
 }
 
 .contact-form input::placeholder,
@@ -669,20 +609,6 @@ nav .container {
     transform: translateY(-3px);
 }
 
-/* Google Map Embed */
-.map-embed {
-    margin-top: 4rem;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-}
-
-.map-embed iframe {
-    width: 100%;
-    height: 450px;
-    border: none;
-}
-
 .social-links-contact {
     display: flex;
     justify-content: center;
@@ -710,7 +636,33 @@ nav .container {
     background: rgba(255,255,255,0.3);
 }
 
-/* Footer (Added social links here) */
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; /* Position on the right side */
+    width: 60px;
+    height: 60px;
+    background-color: #25d366; /* WhatsApp green */
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2.2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E; /* Darker green on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
 footer {
     background: #2f2f7d;
     color: white;
@@ -723,7 +675,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
-    text-align: left; /* Changed from right for LTR */
+    text-align: left;
 }
 
 .footer-section h3 {
@@ -746,7 +698,7 @@ footer {
 
 .social-links-footer {
     display: flex;
-    justify-content: flex-start; /* Changed from flex-end for LTR */
+    justify-content: flex-start; /* Align to left for LTR */
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -791,7 +743,7 @@ footer {
         display: none;
         position: absolute;
         top: 100%;
-        left: 0; /* Changed from right for LTR */
+        left: 0;
         width: 100%;
         background: white;
         flex-direction: column;
@@ -815,7 +767,7 @@ footer {
         font-size: 1.1rem;
     }
 
-    .about-content {
+    .about-content { /* This section should ideally be removed if about.html is gone */
         grid-template-columns: 1fr;
         gap: 2rem;
     }
@@ -828,7 +780,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .stats {
+    .stats { /* This section should ideally be removed if about.html is gone */
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -853,5 +805,14 @@ footer {
     }
     .social-links-footer {
         justify-content: center;
+    }
+
+    /* WhatsApp Button Responsive Adjustments */
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
     }
 }
