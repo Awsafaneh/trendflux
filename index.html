@@ -139,7 +139,7 @@
             padding-bottom: 80px; /* Added padding for content below fold */
         }
 
-        /* Hero Section */
+        /* Hero Section (Home) */
         .hero {
             height: 100vh;
             display: flex;
@@ -305,7 +305,7 @@
         }
         .contact-content {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two columns */
+            grid-template-columns: 1fr 1fr; /* Two columns for info and form */
             gap: 4rem;
             align-items: start;
         }
@@ -316,14 +316,15 @@
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(47, 47, 125, 0.1);
         }
-        .contact-info h2,
-        .contact-form h3 {
-            font-size: 2.5rem; /* Larger for section title */
+        .contact-info h2 {
+            font-size: 2.5rem;
             margin-bottom: 2rem;
             color: var(--primary-dark-blue);
         }
         .contact-form h3 {
-            font-size: 2rem; /* Slightly smaller for form title */
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-dark-blue);
             text-align: center;
         }
         .contact-details {
@@ -344,7 +345,7 @@
         .contact-details i {
             margin-right: 1.5rem; /* Default for LTR */
             font-size: 1.5rem;
-            width: 40px;
+            width: 40px; /* Fixed width for consistent alignment */
             color: var(--secondary-red-orange);
         }
         html[dir="rtl"] .contact-details i {
@@ -805,7 +806,8 @@
     <script>
         const langToggleBtn = document.getElementById('langToggle');
         const htmlElement = document.documentElement;
-        let currentLang = localStorage.getItem('lang') || 'en'; // Default to English
+        // Read language from localStorage, default to 'en' (English)
+        let currentLang = localStorage.getItem('lang') || 'en';
 
         // Function to update content based on language
         function updateContent(lang) {
@@ -818,42 +820,39 @@
             });
             // Update title
             document.title = document.querySelector('title').getAttribute(`data-lang-${lang}`);
-            // Update button text
+            // Update button text: if currentLang is 'en', show 'العربية', else show 'English'
             langToggleBtn.textContent = lang === 'en' ? 'العربية' : 'English';
-            // Update document direction
+            // Update document direction and lang attribute
             htmlElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
             htmlElement.setAttribute('lang', lang);
-
-            // This part is largely handled by CSS now with [dir="rtl"] selector for better performance
-            // However, if there are specific JS-driven style adjustments for RTL not covered by CSS, they'd go here.
         }
 
-        // Initial content load
+        // Initial content load on page load
         updateContent(currentLang);
 
         // Language toggle event listener
         langToggleBtn.addEventListener('click', () => {
-            currentLang = currentLang === 'en' ? 'ar' : 'en';
-            localStorage.setItem('lang', currentLang);
-            updateContent(currentLang);
+            currentLang = currentLang === 'en' ? 'ar' : 'en'; // Toggle language
+            localStorage.setItem('lang', currentLang); // Save preference
+            updateContent(currentLang); // Update content
         });
 
-        // Function to toggle mobile menu
+        // Function to toggle mobile menu for responsiveness
         function toggleMobileMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
         }
 
-        // Function to handle scroll animations
+        // Function to handle scroll animations for elements with .animate-on-scroll
         function triggerAnimations() {
             const elements = document.querySelectorAll('.animate-on-scroll');
             elements.forEach(el => {
                 const rect = el.getBoundingClientRect();
-                // Check if element is in viewport
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                // Check if element is in viewport (partially visible)
+                if (rect.top < window.innerHeight - 100 && rect.bottom > 0) { /* Added -100px buffer */
                     el.classList.add('animated');
                 } else {
-                    // Optional: remove animated class when out of view if you want re-animation on scroll back
+                    // Optional: remove animated class when out of view to re-animate on scroll back
                     // el.classList.remove('animated');
                 }
             });
@@ -862,14 +861,14 @@
         // Add scroll event listener for animations
         window.addEventListener('scroll', triggerAnimations);
 
+        // Execute functions when the DOM is fully loaded
         document.addEventListener('DOMContentLoaded', () => {
-            // Trigger animations on initial load
-            triggerAnimations();
-            // Smooth scroll to sections if hash is present in URL
+            triggerAnimations(); // Initial check for animations on page load
+            // Smooth scroll to sections if hash is present in URL (e.g., website.com/#services)
             if (window.location.hash) {
                 const targetElement = document.querySelector(window.location.hash);
                 if (targetElement) {
-                    setTimeout(() => { // Small delay to allow layout to settle
+                    setTimeout(() => { // Small delay to allow layout to settle after load
                         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }, 100);
                 }
