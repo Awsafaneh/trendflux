@@ -16,12 +16,25 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
-            background: #f8f9fa;
+            background: #f8f9fa; /* Light background for general content */
+            color: #333; /* Default text color */
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Color Palette Variables for easier management */
+        :root {
+            --primary-dark-blue: #2F2F7D;
+            --secondary-red-orange: #E74C3C;
+            --accent-red-darker: #C0392B;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-muted: #666;
+            --border-light: #eee;
         }
 
         /* Language Switcher */
@@ -37,8 +50,8 @@
         }
         .lang-button {
             padding: 10px 15px;
-            background-color: #2F2F7D; /* Dark Blue */
-            color: white;
+            background-color: var(--primary-dark-blue);
+            color: var(--white);
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -47,7 +60,7 @@
             transition: background-color 0.3s ease;
         }
         .lang-button:hover {
-            background-color: #E74C3C; /* Red/Orange */
+            background-color: var(--secondary-red-orange);
         }
 
         /* Navigation */
@@ -79,7 +92,7 @@
         .logo-text {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #2F2F7D;
+            color: var(--primary-dark-blue);
         }
         .nav-links {
             display: flex;
@@ -88,14 +101,14 @@
         }
         .nav-links a {
             text-decoration: none;
-            color: #2F2F7D;
+            color: var(--primary-dark-blue);
             font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
             padding: 10px 0;
         }
         .nav-links a:hover {
-            color: #E74C3C;
+            color: var(--secondary-red-orange);
         }
         .nav-links a::after {
             content: '';
@@ -104,7 +117,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #E74C3C;
+            background: var(--secondary-red-orange);
             transition: width 0.3s ease;
         }
         .nav-links a:hover::after {
@@ -115,7 +128,7 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: #2F2F7D;
+            color: var(--primary-dark-blue);
             cursor: pointer;
         }
 
@@ -123,6 +136,7 @@
         .page-section {
             min-height: 100vh;
             padding-top: 100px; /* To account for fixed nav */
+            padding-bottom: 80px; /* Added padding for content below fold */
         }
 
         /* Hero Section */
@@ -132,8 +146,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #2F2F7D 0%, #E74C3C 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--secondary-red-orange) 100%);
+            color: var(--white);
             position: relative;
             overflow: hidden;
         }
@@ -165,8 +179,8 @@
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
-            background: linear-gradient(45deg, #E74C3C, #C0392B);
-            color: white;
+            background: linear-gradient(45deg, var(--secondary-red-orange), var(--accent-red-darker));
+            color: var(--white);
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
@@ -184,7 +198,7 @@
             text-align: center;
             font-size: 3rem;
             margin-bottom: 3rem;
-            color: #2F2F7D;
+            color: var(--primary-dark-blue);
             position: relative;
         }
         .page-title::after {
@@ -195,13 +209,12 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: linear-gradient(45deg, #2F2F7D, #E74C3C);
+            background: linear-gradient(45deg, var(--primary-dark-blue), var(--secondary-red-orange));
         }
 
         /* Services Section */
         .services-section {
-            padding: 80px 0;
-            background: #f8f9fa;
+            background: var(--light-bg);
         }
         .services-grid {
             display: grid;
@@ -210,7 +223,7 @@
             margin-top: 4rem;
         }
         .service-card {
-            background: white;
+            background: var(--white);
             padding: 3rem;
             border-radius: 20px;
             text-align: center;
@@ -218,7 +231,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            border-top: 5px solid #E74C3C;
+            border-top: 5px solid var(--secondary-red-orange);
         }
         .service-card::before {
             content: '';
@@ -240,15 +253,15 @@
         .service-icon {
             font-size: 4rem;
             margin-bottom: 2rem;
-            color: #E74C3C;
+            color: var(--secondary-red-orange);
         }
         .service-card h3 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: #2F2F7D;
+            color: var(--primary-dark-blue);
         }
         .service-card p {
-            color: #666;
+            color: var(--text-muted);
             line-height: 1.8;
             font-size: 1.1rem;
             margin-bottom: 2rem;
@@ -263,8 +276,8 @@
         }
         .service-features li {
             padding: 0.5rem 0;
-            color: #2F2F7D;
-            border-bottom: 1px solid #eee;
+            color: var(--primary-dark-blue);
+            border-bottom: 1px solid var(--border-light);
             position: relative;
             padding-left: 25px; /* Space for custom bullet LTR */
         }
@@ -276,7 +289,7 @@
             content: '✓';
             position: absolute;
             left: 0; /* Default for LTR */
-            color: #E74C3C;
+            color: var(--secondary-red-orange);
             font-weight: bold;
         }
         html[dir="rtl"] .service-features li::before {
@@ -287,19 +300,31 @@
 
         /* Contact Section */
         .contact-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #2F2F7D 0%, #E74C3C 100%);
-            color: white;
+            background: var(--light-bg); /* Consistent light background */
+            color: var(--text-dark);
         }
         .contact-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr; /* Two columns */
             gap: 4rem;
             align-items: start;
         }
-        .contact-info h2 {
-            font-size: 2.5rem;
+        .contact-info,
+        .contact-form {
+            background: var(--white); /* White background for both info and form */
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(47, 47, 125, 0.1);
+        }
+        .contact-info h2,
+        .contact-form h3 {
+            font-size: 2.5rem; /* Larger for section title */
             margin-bottom: 2rem;
+            color: var(--primary-dark-blue);
+        }
+        .contact-form h3 {
+            font-size: 2rem; /* Slightly smaller for form title */
+            text-align: center;
         }
         .contact-details {
             list-style: none;
@@ -307,17 +332,20 @@
         .contact-details li {
             display: flex;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-size: 1.2rem;
-            padding: 1rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-muted);
+        }
+        .contact-details li:last-child {
+            border-bottom: none;
         }
         .contact-details i {
             margin-right: 1.5rem; /* Default for LTR */
             font-size: 1.5rem;
             width: 40px;
+            color: var(--secondary-red-orange);
         }
         html[dir="rtl"] .contact-details i {
             margin-left: 1.5rem;
@@ -334,18 +362,17 @@
             align-items: center;
             justify-content: center;
             padding: 1rem;
-            background: rgba(255,255,255,0.2);
-            color: white;
+            background: var(--primary-dark-blue);
+            color: var(--white);
             text-decoration: none;
             border-radius: 15px;
             font-size: 1.1rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
         }
         .social-link:hover {
             transform: translateY(-3px);
-            background: rgba(255,255,255,0.3);
+            background: var(--secondary-red-orange);
         }
         .social-link i {
             margin-right: 10px; /* Default for LTR */
@@ -355,30 +382,61 @@
             margin-left: 10px;
             margin-right: 0;
         }
-        .contact-map {
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            text-align: center;
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 1.5rem;
         }
-        .map-placeholder {
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark-blue);
+            font-weight: 600;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
             width: 100%;
-            height: 300px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 2rem;
+            padding: 12px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary-red-orange);
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+            outline: none;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            background: linear-gradient(45deg, var(--secondary-red-orange), var(--accent-red-darker));
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+        }
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.4);
         }
 
         /* Footer */
         footer {
-            background: #2F2F7D;
-            color: white;
+            background: var(--primary-dark-blue);
+            color: var(--white);
             text-align: center;
             padding: 3rem 0;
         }
@@ -395,7 +453,7 @@
             text-align: right; /* Align text to right for RTL */
         }
         .footer-section h3 {
-            color: #E74C3C;
+            color: var(--secondary-red-orange);
             margin-bottom: 1rem;
         }
         .footer-section p,
@@ -405,7 +463,7 @@
             line-height: 1.8;
         }
         .footer-section a:hover {
-            color: #E74C3C;
+            color: var(--secondary-red-orange);
         }
         .footer-section .fab {
             margin-right: 8px; /* Default for LTR */
@@ -420,8 +478,8 @@
             position: fixed;
             bottom: 80px;
             right: 20px; /* Default for LTR */
-            background-color: #25d366;
-            color: white;
+            background-color: #25d366; /* Standard WhatsApp green */
+            color: var(--white);
             border-radius: 50%;
             width: 60px;
             height: 60px;
@@ -470,7 +528,7 @@
                 top: 100%;
                 left: 0; /* Default for LTR */
                 width: 100%;
-                background: white;
+                background: var(--white);
                 flex-direction: column;
                 padding: 2rem;
                 box-shadow: 0 5px 20px rgba(0,0,0,0.1);
@@ -651,7 +709,7 @@
 
     <section id="contact" class="page-section contact-section">
         <div class="container">
-            <h2 class="page-title animate-on-scroll" style="color: white;" data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></h2>
+            <h2 class="page-title animate-on-scroll" data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></h2>
             <div class="contact-content">
                 <div class="contact-info animate-on-scroll">
                     <h2 data-lang-en="We are here to serve you!" data-lang-ar="نحن هنا لخدمتك!"></h2>
@@ -688,12 +746,23 @@
                         </a>
                     </div>
                 </div>
-                <div class="contact-map animate-on-scroll">
-                    <h3 data-lang-en="Our Location on the Map" data-lang-ar="موقعنا على الخريطة"></h3>
-                    <div class="map-placeholder">
-                        <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <p data-lang-en="We look forward to your visit and discussing how we can help you achieve your digital goals!" data-lang-ar="نحن نتطلع إلى زيارتك ومناقشة كيف يمكننا مساعدتك في تحقيق أهدافك الرقمية!"></p>
+                <div class="contact-form animate-on-scroll">
+                    <h3 data-lang-en="Send us a message!" data-lang-ar="أرسل لنا رسالة!"></h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name" data-lang-en="Your Name:" data-lang-ar="اسمك:"></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-lang-en="Your Email:" data-lang-ar="بريدك الإلكتروني:"></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-lang-en="Your Message:" data-lang-ar="رسالتك:"></label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button" data-lang-en="Send Message" data-lang-ar="أرسل الرسالة"></button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -754,6 +823,9 @@
             // Update document direction
             htmlElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
             htmlElement.setAttribute('lang', lang);
+
+            // This part is largely handled by CSS now with [dir="rtl"] selector for better performance
+            // However, if there are specific JS-driven style adjustments for RTL not covered by CSS, they'd go here.
         }
 
         // Initial content load
@@ -777,17 +849,23 @@
             const elements = document.querySelectorAll('.animate-on-scroll');
             elements.forEach(el => {
                 const rect = el.getBoundingClientRect();
+                // Check if element is in viewport
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
                     el.classList.add('animated');
+                } else {
+                    // Optional: remove animated class when out of view if you want re-animation on scroll back
+                    // el.classList.remove('animated');
                 }
             });
         }
 
+        // Add scroll event listener for animations
         window.addEventListener('scroll', triggerAnimations);
 
         document.addEventListener('DOMContentLoaded', () => {
+            // Trigger animations on initial load
             triggerAnimations();
-            // Scroll to section if hash is present in URL
+            // Smooth scroll to sections if hash is present in URL
             if (window.location.hash) {
                 const targetElement = document.querySelector(window.location.hash);
                 if (targetElement) {
