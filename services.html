@@ -93,7 +93,7 @@
             cursor: pointer;
         }
 
-        /* Page Sections - For single-page layout only, but kept for consistency if needed */
+        /* Page Sections */
         .page-section {
             min-height: 100vh;
             padding-top: 100px; /* To account for fixed nav */
@@ -223,6 +223,28 @@
             color: #e74c3c;
         }
 
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 80px; /* Adjusted to be slightly higher */
+            right: 20px; /* For RTL, this will appear on the right */
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -272,6 +294,13 @@
             .footer-section {
                 text-align: center; /* Center align footer sections on mobile */
             }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+                bottom: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
@@ -279,7 +308,7 @@
     <nav>
         <div class="container">
             <div class="logo">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ3aGl0ZSIvPgo8IS0tIE1haW4gVCBzaGFwZSAtLT4KPHJlY3QgeD0iMTY4IiB5PSIxNDUiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTUiIGZpbGw9IiMyRjJGN0QiLz4KPHJlY3QgeD0iMjE2IiB5PSIxNjAiIHdpZHRoPSIxNSIgaGVpZ2h0PSIxMjgiIGZpbGw9IiMyRjJGN0QiLz4KCjwhLS0gUmVkIEYgc2hhcGUgLS0+CjxyZWN0IHg9IjI0MiIgeT0iMTc2IiB3aWR0aD0iODYiIGhlaWdodD0iMTQiIGZpbGw9IiNFNzRDM0MiLz4KPHJlY3QgeD0iMjQyIiB5PSIxNzYiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxMTIiIGZpbGw9IiNFNzRDM0MiLz4KPHJlY3QgeD0iMjQyIiB5PSIyMTQiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNCIgZmlsbD0iI0U3NEMzQyIvPgoKPCEtLSBUb3AgcmlnaHQgYWNjZW50IC0tPgo8cmVjdCB4PSIzMjYiIHk9IjExNSIgd2lkdGg9IjE0IiBoZWlnaHQ9IjM4IiBmaWxsPSIjRTc0QzNDIi8+CjxyZWN0IHg9IjM0MCIgeT0iMTE1IiB3aWR0aD0iMjQiIGhlaWdodD0iMTQiIGZpbGw9IiNFNzRDM0MiLz4KPHJlY3QgeD0iMzUwIiB5PSIxMTUiIHdpZHRoPSIxNCIgaGVpZ2h0PSIzOCIgZmlsbD0iIzJGMkY3RCIvPgoKPCEtLSBUZXh0IC0tPgo8dGV4dCB4PSIyNTAiIHk9IjM2MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQ4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzJGMkY3RCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VFJFTkRGTFVYPC90ZXh0Pgo8dGV4dCB4PSIyNTAiIHk9IjM5NSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb29udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgZmlsbD0iI0U3NEMzQyIidGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjRweCI+QUdFTkNZPC90ZXh0Pgo8L3N2Zz4==" alt="TrendFlux Agency">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ3aGl0ZSIvPgo8IS0tIE1haW4gVCBzaGFwZSAtLT4KPHJlY3QgeD0iMTY4IiB5PSIxNDUiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTUiIGZpbGw9IiMyRjJGN0QiLz4KPHJlY3QgeD0iMjE2IiB5PSIxNjAiIHdpZHRoPSIxNSIgaGVpZ2h0PSIxMjgiIGZpbGw9IiMyRjJGN0QiLz4KCjwhLS0gUmVkIEYgc2hhcGUgLS0+CjxyZWN0IHg9IjI0MiIgeT0iMTc2IiB3aWR0aD0iODYiIGhlaWdodD0iMTQiIGZpbGw9IiNFNzRDM0MiLz4KPHJlY3QgeD0iMjQyIiB5PSIxNzYiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxMTIiIGZpbGw9IiNFNzRDM0MiLz4KPHJlY3QgeD0iMjQyIiB5PSIyMTQiIHdpZHRoPSI2MiIgaGVpZ2h0PSIxNCIgZmlsbD0iI0U3NEMzQyIvPgoKPCEtLSBUb3AgcmlnaHQgYWNjZW50IC0tPgo8cmVjdCB4PSIzMjYiIHk9IjExNSIgd2lkdGg9IjE0IiBoZWlnaHQ9IjM4IiBmaWxsPSIjRTc0QzNDIi8+CjxyZWN0IHg9IjM0MCIgeT0iMTE1IiB3aWR0aD0iMjQiIGhlaWdodD0iMTQiIGZpbGw9IiNFNzRDM0MiLz4KPHJlY3QgeD0iMzUwIiB5PSIxMTUiIHdpZHRoPSIxNCIgaGVpZ2h0PSIzOCIgZmlsbD0iIzJGMkY3RCIvPgoKPCEtLSBUZXh0IC0tPgo8dGV4dCB4PSIyNTAiIHk9IjM2MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQ4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzJGMkY3RCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VFJFTkRGTFVYPC90ZXh0Pgo8dGV4dCB4PSIyNTAiIHk9IjM5NSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0ibm9ybWFsIiBmaWxsPSIjRTc0QzNDIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iNHB4Ij5BR0VOQ1k8L3RleHQ+Cjwvc3ZnPg==" alt="TrendFlux Agency">
                 <span class="logo-text">TrendFlux Agency</span>
             </div>
             <ul class="nav-links" id="navLinks">
@@ -358,6 +387,10 @@
         </div>
     </section>
 
+    <a href="https://wa.me/9627XXXXXXXX" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <footer>
         <div class="container footer-content">
             <div class="footer-section">
@@ -370,6 +403,12 @@
                 <p><a href="services.html">خدماتنا</a></p>
                 <p><a href="about.html">من نحن</a></p>
                 <p><a href="contact.html">تواصل معنا</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>تابعنا</h3>
+                <p><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> فيسبوك</a></p>
+                <p><a href="#" target="_blank"><i class="fab fa-instagram"></i> انستغرام</a></p>
+                <p><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> لينكد إن</a></p>
             </div>
             <div class="footer-section">
                 <h3>تواصل معنا</h3>
