@@ -3,537 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrendFlux Agency - وكالة التسويق الرقمي</title>
+    <title>TrendFlux Agency - الرئيسية</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-            background: #f8f9fa;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(15px);
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 20px rgba(47, 47, 125, 0.1);
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #2f2f7d;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #2f2f7d;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 10px 0;
-        }
-
-        .nav-links a:hover {
-            color: #e74c3c;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #e74c3c;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #2f2f7d;
-            cursor: pointer;
-        }
-
-        /* Page Sections */
-        .page-section {
-            display: none;
-            min-height: 100vh;
-            padding-top: 100px; /* Adjust for fixed nav */
-        }
-
-        .page-section.active {
-            display: block;
-        }
-
-        /* Hero Section (Home Page) */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(135deg, #2f2f7d 0%, #e74c3c 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,1000 1000,0 1000,1000"/></svg>');
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.4);
-        }
-
-        /* General Page Styles */
-        .page-title {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            color: #2f2f7d;
-            position: relative;
-        }
-
-        .page-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(45deg, #2f2f7d, #e74c3c);
-        }
-
-        /* Services Page */
-        .services-page {
-            padding: 50px 0;
-            background: #f8f9fa;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(47, 47, 125, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border-top: 5px solid #e74c3c;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(231, 76, 60, 0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .service-card:hover::before {
-            left: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 80px rgba(47, 47, 125, 0.15);
-        }
-
-        .service-icon {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            color: #e74c3c;
-        }
-
-        .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #2f2f7d;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .service-features {
-            list-style: none;
-            text-align: right;
-            margin-top: 2rem;
-        }
-
-        .service-features li {
-            padding: 0.5rem 0;
-            color: #2f2f7d;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-right: 25px;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            position: absolute;
-            right: 0;
-            color: #e74c3c;
-            font-weight: bold;
-        }
-
-        /* About Page */
-        .about-page {
-            padding: 50px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 4rem;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #2f2f7d;
-        }
-
-        .about-text p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(47, 47, 125, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .stat:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #e74c3c;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #2f2f7d;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        /* Contact Page */
-        .contact-page {
-            padding: 50px 0;
-            background: linear-gradient(135deg, #2f2f7d 0%, #e74c3c 100%);
-            color: white;
-            text-align: center; /* Center content on contact page */
-        }
-
-        .contact-info {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-info h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: white; /* Ensure title is white */
-        }
-
-        .contact-details {
-            list-style: none;
-            margin-bottom: 3rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center details */
-            gap: 1.5rem;
-        }
-
-        .contact-details li {
-            display: flex;
-            align-items: center;
-            font-size: 1.2rem;
-            padding: 1rem 2rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            width: fit-content; /* Make list items fit content */
-            margin: 0 auto; /* Center list items */
-        }
-
-        .contact-details i {
-            margin-left: 1.5rem;
-            font-size: 1.5rem;
-            width: 40px;
-            text-align: center;
-        }
-
-        .social-links-contact { /* New class for social links in contact page */
-            display: flex;
-            justify-content: center; /* Center social links */
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .social-link-contact {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            text-decoration: none;
-            border-radius: 50%; /* Make them circular */
-            font-size: 2rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .social-link-contact:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.3);
-        }
-
-        /* Footer */
-        footer {
-            background: #2f2f7d;
-            color: white;
-            text-align: center;
-            padding: 3rem 0;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            color: #e74c3c;
-            margin-bottom: 1rem;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            line-height: 1.8;
-        }
-
-        .footer-section a:hover {
-            color: #e74c3c;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .animate-on-scroll.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 2rem;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .page-title {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .contact-details li {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-                padding: 1rem;
-            }
-
-            .contact-details i {
-                margin: 0 0 10px 0;
-            }
-
-            .social-links-contact {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
@@ -543,10 +15,10 @@
                 <span class="logo-text">TrendFlux Agency</span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#" onclick="showPage('home')">الرئيسية</a></li>
-                <li><a href="#" onclick="showPage('services')">الخدمات</a></li>
-                <li><a href="#" onclick="showPage('about')">من نحن</a></li>
-                <li><a href="#" onclick="showPage('contact')">تواصل معنا</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
@@ -554,145 +26,108 @@
         </div>
     </nav>
 
-    <section id="home" class="page-section active">
-        <div class="hero">
-            <div class="hero-content">
-                <h1>TrendFlux Agency</h1>
-                <p>نحن وكالة تسويق رقمي مبدعة في عمان، الأردن، نقدم حلولاً متكاملة للتسويق وتطوير المواقع والهوية التجارية والإبداع الرقمي</p>
-                <a href="#" onclick="showPage('services')" class="cta-button">استكشف خدماتنا</a>
-            </div>
+    <section id="home" class="page-section hero">
+        <div class="hero-content animate-on-scroll">
+            <h1>أطلق العنان لإمكانياتك الرقمية مع TrendFlux</h1>
+            <p>نحن وكالة تسويق رقمي وتطوير مواقع رائدة في عمان، الأردن. نقدم حلولاً متكاملة لتحويل رؤيتك إلى واقع رقمي مبهر.</p>
+            <a href="services.html" class="cta-button">اكتشف خدماتنا</a>
         </div>
     </section>
 
-    <section id="services" class="page-section services-page">
+    <section id="why-choose-us" class="page-section why-choose-us">
         <div class="container">
-            <h2 class="page-title animate-on-scroll">خدماتنا المتميزة</h2>
-            <div class="services-grid">
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>التسويق الرقمي</h3>
-                    <p>نقدم استراتيجيات تسويقية مبتكرة ومدروسة تهدف إلى زيادة الوعي بعلامتك التجارية وجذب العملاء المستهدفين من خلال القنوات الرقمية المختلفة.</p>
-                    <ul class="service-features">
-                        <li>إدارة حسابات وسائل التواصل الاجتماعي</li>
-                        <li>التسويق عبر محركات البحث (SEO & SEM)</li>
-                        <li>حملات إعلانية مدفوعة على Facebook و Google</li>
-                        <li>تسويق المحتوى والتسويق بالعمولة</li>
-                        <li>تحليل البيانات وقياس الأداء</li>
-                    </ul>
+            <h2 class="section-heading animate-on-scroll">لماذا تختار TrendFlux Agency؟</h2>
+            <p class="section-subheading animate-on-scroll">نحن نجمع بين الشغف بالإبداع والخبرة التقنية لتقديم نتائج ملموسة لعملائنا في كل مشروع.</p>
+            <div class="features-grid">
+                <div class="feature-item animate-on-scroll">
+                    <div class="icon"><i class="fas fa-handshake"></i></div>
+                    <h3>شراكة استراتيجية</h3>
+                    <p>نعمل كشريك لك، نفهم أهدافك ونبني استراتيجيات تسويقية وتطويرية مصممة خصيصاً لنجاحك.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>تطوير المواقع الإلكترونية</h3>
-                    <p>نصمم ونطور مواقع إلكترونية احترافية وسريعة الاستجابة باستخدام أحدث التقنيات والمعايير العالمية لضمان تجربة مستخدم مثالية.</p>
-                    <ul class="service-features">
-                        <li>مواقع إلكترونية متجاوبة مع جميع الأجهزة</li>
-                        <li>متاجر إلكترونية متكاملة</li>
-                        <li>أنظمة إدارة المحتوى (CMS)</li>
-                        <li>تطبيقات الويب التفاعلية</li>
-                        <li>الصيانة والدعم الفني المستمر</li>
-                    </ul>
+                <div class="feature-item animate-on-scroll">
+                    <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>حلول مبتكرة</h3>
+                    <p>نقدم أفكارًا إبداعية وحلولًا رقمية متطورة تضمن لك التميز في سوق تنافسي.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>تصميم الهوية التجارية</h3>
-                    <p>نساعدك في بناء هوية تجارية قوية ومميزة تعكس قيم شركتك ورؤيتها من خلال التصاميم الإبداعية والمفاهيم البصرية المبتكرة.</p>
-                    <ul class="service-features">
-                        <li>تصميم الشعارات والهويات البصرية</li>
-                        <li>دليل الهوية التجارية الشامل</li>
-                        <li>تصميم المطبوعات والكتالوجات</li>
-                        <li>تصميم العبوات والمنتجات</li>
-                        <li>اللافتات والإعلانات الخارجية</li>
-                    </ul>
+                <div class="feature-item animate-on-scroll">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>نتائج قابلة للقياس</h3>
+                    <p>نركز على تحقيق عائد استثمار واضح، مع تقارير شفافة تتبع تقدمك وتوضح النتائج.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>الإبداع والتوجه الفني</h3>
-                    <p>فريقنا الإبداعي المتخصص يقدم حلولاً فنية متميزة وأفكاراً مبتكرة للحملات الإعلانية والمحتوى البصري الذي يميز علامتك التجارية.</p>
-                    <ul class="service-features">
-                        <li>الحملات الإعلانية الإبداعية</li>
-                        <li>إنتاج المحتوى البصري والمرئي</li>
-                        <li>التصوير الفوتوغرافي الاحترافي</li>
-                        <li>الرسوم المتحركة والموشن جرافيك</li>
-                        <li>الاستشارات الفنية والإبداعية</li>
-                    </ul>
+                <div class="feature-item animate-on-scroll">
+                    <div class="icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>فريق خبراء متخصص</h3>
+                    <p>يضم فريقنا نخبة من المتخصصين في التسويق، التصميم، والبرمجة، مستعدون لتلبية كافة احتياجاتك.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="page-section about-page">
+    <section id="our-process" class="page-section process-section">
         <div class="container">
-            <h2 class="page-title animate-on-scroll">من نحن</h2>
-            <div class="about-content">
-                <div class="about-text animate-on-scroll">
-                    <h2>لماذا تختار TrendFlux Agency؟</h2>
-                    <p>نحن وكالة تسويق رقمي متخصصة ومقرها في عمان، الأردن، تجمع بين الخبرة العملية والإبداع الفني لتقديم حلول تسويقية متكاملة ومبتكرة تلبي احتياجات عملائنا وتحقق أهدافهم التجارية بكفاءة عالية.</p>
-                    <p>يضم فريقنا المتخصص خبراء في مجالات التسويق الرقمي، تطوير المواقع الإلكترونية، التصميم الجرافيكي، والإبداع الفني، مما يضمن تقديم خدمات عالية الجودة تواكب أحدث الاتجاهات والتقنيات في السوق الرقمي.</p>
-                    <p>نؤمن بأن كل عميل فريد وله احتياجاته الخاصة، لذلك نقدم حلولاً مخصصة ومدروسة تناسب طبيعة عملك وميزانيتك، مع متابعة مستمرة وتقييم دوري لضمان تحقيق أفضل النتائج والعائد على الاستثمار.</p>
+            <h2 class="section-heading animate-on-scroll">كيف نعمل؟ مراحل مشروعك معنا</h2>
+            <p class="section-subheading animate-on-scroll">نتبع منهجية عمل واضحة وفعالة لضمان أفضل النتائج وتسليم المشاريع في الوقت المحدد.</p>
+            <div class="process-grid">
+                <div class="process-step animate-on-scroll">
+                    <span class="step-number">01</span>
+                    <div class="step-icon"><i class="fas fa-comments"></i></div>
+                    <h3>الاستكشاف والتحليل</h3>
+                    <p>نبدا بفهم عميق لأهدافك، جمهورك، وتحليل شامل لمنافسيك لاعداد استراتيجية قوية.</p>
                 </div>
-                <div class="about-image animate-on-scroll">
-                    <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #2f2f7d, #e74c3c); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
-                        <i class="fas fa-rocket"></i>
-                    </div>
+                <div class="process-step animate-on-scroll">
+                    <span class="step-number">02</span>
+                    <div class="step-icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h3>التخطيط والتصميم</h3>
+                    <p>نضع خطة عمل مفصلة ونقوم بتطوير التصميمات الأولية والجرافيكس اللازمة للمشروع.</p>
                 </div>
-            </div>
-            <div class="stats">
-                <div class="stat animate-on-scroll">
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">عميل راضٍ</div>
+                <div class="process-step animate-on-scroll">
+                    <span class="step-number">03</span>
+                    <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>التنفيذ والتطوير</h3>
+                    <p>نبدأ في بناء وتطوير الحلول الرقمية، سواء كانت حملات تسويقية أو تطوير مواقع، بأعلى جودة.</p>
                 </div>
-                <div class="stat animate-on-scroll">
-                    <div class="stat-number">250+</div>
-                    <div class="stat-label">مشروع منجز</div>
-                </div>
-                <div class="stat animate-on-scroll">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">سنوات خبرة</div>
-                </div>
-                <div class="stat animate-on-scroll">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">دعم فني</div>
+                <div class="process-step animate-on-scroll">
+                    <span class="step-number">04</span>
+                    <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>الإطلاق والمتابعة</h3>
+                    <p>بعد الاختبار الشامل، نطلق مشروعك ونقدم الدعم والمتابعة المستمرة لضمان نجاحه المستمر.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="page-section contact-page">
+    <section id="testimonials" class="page-section testimonials-section">
         <div class="container">
-            <h2 class="page-title animate-on-scroll" style="color: white;">تواصل معنا</h2>
-            <div class="contact-info animate-on-scroll">
-                <p style="font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">يسعدنا تواصلكم معنا للاستفسارات أو طلب الخدمات. فريقنا مستعد للإجابة على جميع أسئلتكم.</p>
-                <ul class="contact-details">
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>عمان، الأردن</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone-alt"></i>
-                        <span>+962 7XXXXXXXX</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <span>info@trendflux.com</span>
-                    </li>
-                </ul>
-                <div class="social-links-contact">
-                    <a href="https://www.instagram.com/youragency" target="_blank" class="social-link-contact">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/youragency" target="_blank" class="social-link-contact">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
+            <h2 class="section-heading animate-on-scroll">ماذا يقول عملاؤنا</h2>
+            <p class="section-subheading animate-on-scroll">نفخر بشهادات عملائنا التي تعكس التزامنا بالتميز وتقديم القيمة الحقيقية.</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                    <p>"TrendFlux Agency تجاوزت توقعاتنا في حملات التسويق الرقمي. لقد رأينا زيادة ملحوظة في التفاعل والمبيعات. فريق عمل احترافي ومبدع!"</p>
+                    <div class="client-info">محمد أحمد</div>
+                    <div class="client-title">مدير التسويق، شركة الأفق الجديد</div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                    <p>"الموقع الإلكتروني الذي صمموه لنا كان تحفة فنية ووظيفية. سهل الاستخدام وذو تصميم عصري. خدمة عملاء رائعة!"</p>
+                    <div class="client-info">ليلى محمود</div>
+                    <div class="client-title">صاحبة متجر "جمالكِ"</div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                    <p>"بفضل استراتيجيات SEO التي قدمتها TrendFlux، تحسن ترتيب موقعنا بشكل كبير في محركات البحث. أنصح بهم بشدة!"</p>
+                    <div class="client-info">خالد السيد</div>
+                    <div class="client-title">مؤسس شركة "حلول التكنولوجيا"</div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="page-section cta-section" style="text-align: center; background: #e74c3c; color: white; padding: 60px 0;">
+        <div class="container animate-on-scroll">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">جاهز لتبدأ مشروعك القادم؟</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.9;">دعنا نساعدك في تحقيق أهدافك الرقمية. تواصل معنا اليوم!</p>
+            <a href="contact.html" class="cta-button" style="background: #2f2f7d; box-shadow: none;">تواصل معنا الآن</a>
         </div>
     </section>
 
@@ -705,10 +140,10 @@
             <div class="footer-section">
                 <h3>روابط سريعة</h3>
                 <ul>
-                    <li><a href="#" onclick="showPage('home')">الرئيسية</a></li>
-                    <li><a href="#" onclick="showPage('services')">خدماتنا</a></li>
-                    <li><a href="#" onclick="showPage('about')">من نحن</a></li>
-                    <li><a href="#" onclick="showPage('contact')">تواصل معنا</a></li>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="services.html">خدماتنا</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -716,6 +151,11 @@
                 <p><i class="fas fa-map-marker-alt"></i> عمان، الأردن</p>
                 <p><i class="fas fa-phone-alt"></i> +962 7XXXXXXXX</p>
                 <p><i class="fas fa-envelope"></i> info@trendflux.com</p>
+                <div class="social-links-footer">
+                    <a href="https://instagram.com/trendflux.jo" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/youragency" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/youragency" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
         <div class="container">
@@ -723,52 +163,6 @@
         </div>
     </footer>
 
-    <script>
-        // Function to show specific page and hide others
-        function showPage(pageId) {
-            document.querySelectorAll('.page-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(pageId).classList.add('active');
-
-            // Close mobile menu if open
-            const navLinks = document.getElementById('navLinks');
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-            }
-        }
-
-        // Toggle mobile menu
-        function toggleMobileMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-
-        // Animate elements on scroll
-        document.addEventListener('DOMContentLoaded', () => {
-            const animateElements = document.querySelectorAll('.animate-on-scroll');
-
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animated');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            animateElements.forEach(el => {
-                observer.observe(el);
-            });
-
-            // Initially show the home page
-            showPage('home');
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
