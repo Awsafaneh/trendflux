@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - TrendFlux Agency</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(47, 47, 125, 0.1);
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2f2f7d;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2f2f7d;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 10px 0;
+        }
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #e74c3c;
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #2f2f7d;
+            cursor: pointer;
+        }
+
+        /* Page Sections - For single-page layout only, but kept for consistency if needed */
+        .page-section {
+            min-height: 100vh;
+            padding-top: 100px; /* To account for fixed nav */
+        }
+
+        /* Page Titles */
+        .page-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #2f2f7d;
+            position: relative;
+        }
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #2f2f7d, #e74c3c);
+        }
+
+        /* Contact Page */
+        .contact-page {
+            padding: 50px 0;
+            background: linear-gradient(135deg, #2f2f7d 0%, #e74c3c 100%);
+            color: white;
+        }
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .contact-details {
+            list-style: none;
+        }
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .contact-details i {
+            margin-left: 1.5rem; /* For RTL, margin-left */
+            font-size: 1.5rem;
+            width: 40px; /* Fixed width for icon alignment */
+        }
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.3);
+        }
+        .social-link i {
+            margin-left: 10px; /* For RTL, margin-left */
+            font-size: 1.3rem;
+        }
+        .contact-map {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            text-align: center;
+        }
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2f2f7d;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section {
+            text-align: right; /* Align text to right for RTL */
+        }
+        .footer-section h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+        .footer-section a:hover {
+            color: #e74c3c;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0; /* Changed to left for RTL */
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .page-title {
+                font-size: 2rem;
+            }
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+            .footer-section {
+                text-align: center; /* Center align footer sections on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ3aGl0ZSIvPgo8IS0tIE1haW4gVCBzaGFwZSAtLT4KPHJlY3QgeD0iMTY4IiB5PSIxNDUiIHdpZHRoPSIxNjQiIGhlaWghtPSIxNSIgZmlsbD0iIzJGMkY3RCIvPgo8cmVjdCB4PSIyMTYiIHk9IjE2MCIgd2lkdGg9IjE1IiBoZWlnaHQ9IjEyOCIgZmlsbD0iIzJGMkY3RCIvPgoKPCEtLSBSZWQgRiBzaGFwZSAtLT4KPHJlY3QgeD0iMjQyIiB5PSIxNzYiIHdpZHRoPSI4NiIgaGVpZ2h0PSIxNCIgZmlsbD0iI0U3NEMzQyIvPgo8cmVjdCB4PSIyNDIiIHk9IjE3NiIgd2lkdGg9IjE0IiBoZWlnaHQ9IjExMiIgZmlsbD0iI0U3NEMzQyIvPgo8cmVjdCB4PSIyNDIiIHk9IjIxNCIgd2lkdGg9IjYyIiBoZWlnaHQ9IjE0IiBmaWxsPSIjRTc0QzNDIi8+Cgo8IS0tIFRvcCByaWdodCBhY2NlbnQgLS0+CjxyZWN0IHg9IjMyNiIgeT0iMTE1IiB3aWR0aD0iMTQiIGhlaWdodD0iMzgiIGZpbGw9IiNFNzRDM0MiLz4KPHJlY3QgeD0iMzQwIiB5PSIxMTUiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxNCIgZmlsbD0iI0U3NEMzQyIvPgo8cmVjdCB4PSIzNTAiIHk9IjExNSIgd2lkdGg9IjE0IiBoZWlnaHQ9IjM4IiBmaWxsPSIjMkYyRjdEIi8+Cgo8IS0tIFRleHQtLT4KPHRleHQgeD0iMjUwIiB5PSIzNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0OCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMyRjJGN0QiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlRSRU5ERkxVWDwvdGV4dD4KPHRleHQgeD0iMjUwIiB5PSIzOTUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgZmlsbD0iI0U3NEMzQyIidGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjRweCI+QUdFTkNZPC90ZXh0Pgo8L3N2Zz4=" alt="TrendFlux Agency">
+                <span class="logo-text">TrendFlux Agency</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section id="contact" class="page-section contact-page">
+        <div class="container">
+            <h2 class="page-title animate-on-scroll" style="color: white;">تواصل معنا</h2>
+            <div class="contact-content">
+                <div class="contact-info animate-on-scroll">
+                    <h2>نحن هنا لخدمتك!</h2>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>عمان، الأردن - شارع مكة، مبنى 123</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+962 7XXXXXXXX</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@trendflux.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>الأحد - الخميس: 9:00 صباحاً - 5:00 مساءً</span>
+                        </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#" class="social-link" target="_blank">
+                            <i class="fab fa-facebook"></i> فيسبوك
+                        </a>
+                        <a href="#" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i> انستغرام
+                        </a>
+                        <a href="#" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i> لينكد إن
+                        </a>
+                        <a href="#" class="social-link" target="_blank">
+                            <i class="fab fa-twitter"></i> تويتر
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-map animate-on-scroll">
+                    <h3>موقعنا على الخريطة</h3>
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <p>نحن نتطلع إلى زيارتك ومناقشة كيف يمكننا مساعدتك في تحقيق أهدافك الرقمية!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>TrendFlux Agency</h3>
+                <p>وكالة تسويق رقمي رائدة في عمان، الأردن، نجمع بين الابتكار والخبرة لتحقيق أفضل النتائج لعملائنا.</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <p><a href="index.html">الرئيسية</a></p>
+                <p><a href="services.html">خدماتنا</a></p>
+                <p><a href="about.html">من نحن</a></p>
+                <p><a href="contact.html">تواصل معنا</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>تواصل معنا</h3>
+                <p>البريد الإلكتروني: info@trendflux.com</p>
+                <p>الهاتف: +962 7XXXXXXXX</p>
+                <p>العنوان: عمان، الأردن - شارع مكة</p>
+            </div>
+        </div>
+        <div class="container">
+            <p>&copy; 2025 TrendFlux Agency. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to toggle mobile menu
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Function to handle scroll animations
+        function triggerAnimations() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.classList.add('animated');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', triggerAnimations);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            triggerAnimations();
+        });
+    </script>
+</body>
+</html>
