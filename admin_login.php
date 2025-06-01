@@ -6,7 +6,7 @@ session_start(); // بدء جلسة PHP
 // بيانات المستخدم (يمكنك تغييرها)
 // !! هام جداً: في بيئة الإنتاج، استخدم تجزئة (hashing) لكلمات المرور (مثل password_hash).
 $valid_username = 'admin';
-$valid_password = 'your_strong_password_here'; // غيّر هذا!
+$valid_password = 'aboyaser123'; // غيّر هذا!
 
 $login_error = '';
 
