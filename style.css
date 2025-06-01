@@ -1,5 +1,6 @@
 /* style.css */
 
+/* General Styles & Reset */
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +10,10 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevents horizontal scroll from responsive adjustments */
     background: #f8f9fa;
-    direction: ltr; /* Set direction to LTR for English */
-    text-align: left; /* Align text to the left for English */
+    direction: ltr; /* Set direction to LTR for English content */
+    text-align: left; /* Align text to the left for English content */
     color: #333;
 }
 
@@ -22,7 +23,7 @@ body {
     padding: 0 20px;
 }
 
-/* Navigation */
+/* Navigation Bar */
 nav {
     position: fixed;
     top: 0;
@@ -31,7 +32,7 @@ nav {
     backdrop-filter: blur(15px);
     z-index: 1000;
     padding: 1rem 0;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Ensure smooth transition for shrinking */
     box-shadow: 0 2px 20px rgba(47, 47, 125, 0.1);
 }
 
@@ -39,6 +40,7 @@ nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.3s ease; /* Smooth transition for alignment/gap changes */
 }
 
 .logo {
@@ -48,14 +50,17 @@ nav .container {
 }
 
 .logo img {
-    height: 50px;
+    height: 50px; /* Fixed height for consistency */
     width: auto;
+    transition: height 0.3s ease; /* Smooth transition for shrinking */
 }
 
 .logo-text {
     font-size: 1.8rem;
     font-weight: bold;
     color: #2f2f7d;
+    white-space: nowrap; /* Prevents text wrapping */
+    transition: font-size 0.3s ease; /* Smooth transition for shrinking */
 }
 
 .nav-links {
@@ -93,20 +98,34 @@ nav .container {
 }
 
 .mobile-menu {
-    display: none;
+    display: none; /* Hidden by default on larger screens */
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Default size, will be adjusted for mobile */
     color: #2f2f7d;
     cursor: pointer;
+    padding: 5px; /* Add some padding for easier tapping */
 }
 
-/* General Page Section Padding */
+/* Style for the nav bar when scrolled */
+nav.scrolled {
+    padding: 0.5rem 0; /* Smaller padding when scrolled */
+    box-shadow: 0 4px 25px rgba(47, 47, 125, 0.15); /* Slightly stronger shadow */
+}
+
+nav.scrolled .logo img {
+    height: 40px; /* Smaller logo when scrolled */
+}
+
+nav.scrolled .logo-text {
+    font-size: 1.5rem; /* Smaller text when scrolled */
+}
+
+/* Page Section General Styles */
 .page-section {
     padding: 120px 0 80px; /* Adjust for fixed nav and add bottom padding */
 }
 
-/* General Page Title Styles */
 .page-title {
     text-align: center;
     font-size: 3rem;
@@ -126,7 +145,6 @@ nav .container {
     background: linear-gradient(45deg, #2f2f7d, #e74c3c);
 }
 
-/* Sub-headings for sections */
 .section-heading {
     text-align: center;
     font-size: 2.5rem;
@@ -164,7 +182,9 @@ nav .container {
     left: 0;
     right: 0;
     bottom: 0;
+    /* Using a small SVG for a subtle pattern, can be replaced with an image */
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,1000 1000,0 1000,1000"/></svg>');
+    opacity: 0.8; /* Subtle transparency */
 }
 
 .hero-content {
@@ -204,7 +224,7 @@ nav .container {
     box-shadow: 0 15px 40px rgba(231, 76, 60, 0.4);
 }
 
-/* Why Choose Us Section (index.html) */
+/* Why Choose Us Section */
 .why-choose-us .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -243,7 +263,7 @@ nav .container {
     line-height: 1.7;
 }
 
-/* Our Process Section (index.html) */
+/* Our Process Section */
 .process-section {
     background: #f0f4f8;
 }
@@ -304,63 +324,6 @@ nav .container {
     line-height: 1.7;
     position: relative;
     z-index: 1;
-}
-
-/* Testimonials Section (index.html) */
-.testimonials-section {
-    background: linear-gradient(135deg, #2f2f7d 0%, #e74c3c 100%);
-    color: white;
-}
-
-.testimonials-section .section-heading,
-.testimonials-section .section-subheading {
-    color: white;
-}
-
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
-}
-
-.testimonial-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.testimonial-card .quote-icon {
-    font-size: 3rem;
-    color: #ffcc00; /* A golden color for quotes */
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
-.testimonial-card p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    color: #eee;
-}
-
-.testimonial-card .client-info {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: white;
-}
-
-.testimonial-card .client-title {
-    font-size: 0.9rem;
-    color: #ccc;
 }
 
 /* Services Page */
@@ -737,74 +700,210 @@ footer {
     transform: translateY(0);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive Adjustments (Media Queries) */
+@media (max-width: 992px) {
     .nav-links {
-        display: none;
+        gap: 1.5rem; /* Reduce gap for slightly smaller desktops/large tablets */
+    }
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    .page-title, .section-heading {
+        font-size: 2.8rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Navigation Adjustments for Mobile */
+    .nav-links {
+        display: none; /* Hide desktop nav links by default */
         position: absolute;
-        top: 100%;
+        top: 100%; /* Position below the nav bar */
         left: 0;
         width: 100%;
         background: white;
         flex-direction: column;
-        padding: 2rem;
+        padding: 1.5rem;
         box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        border-top: 1px solid #eee;
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex; /* Show when active */
     }
 
-    .mobile-menu {
-        display: block;
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .nav-links li:last-child {
+        margin-bottom: 0;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
+    .nav-links a {
+        padding: 12px 0;
+        display: block; /* Make links full width for better tapping */
         font-size: 1.1rem;
     }
 
-    .about-content { /* This section should ideally be removed if about.html is gone */
+    .mobile-menu {
+        display: block; /* Show hamburger menu on mobile */
+        font-size: 1.4rem; /* Adjusted size for mobile menu icon */
+        margin-left: auto; /* Push to the right */
+        padding: 8px; /* Increase tap area */
+    }
+
+    .logo-text {
+        font-size: 1.5rem; /* Adjust logo text size on mobile */
+    }
+    .logo img {
+        height: 40px; /* Slightly smaller logo on mobile */
+    }
+
+    /* Hero Section */
+    .hero {
+        padding-top: 80px; /* Adjust for fixed nav */
+        height: auto; /* Allow content to dictate height */
+        min-height: 80vh; /* Ensure it still takes up significant space */
+    }
+    .hero h1 {
+        font-size: 2.5rem; /* Smaller heading on mobile */
+        margin-bottom: 1rem;
+    }
+    .hero p {
+        font-size: 1rem; /* Smaller paragraph text */
+        margin-bottom: 1.5rem;
+    }
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    /* General Page Sections */
+    .page-section {
+        padding: 90px 0 60px; /* Adjusted padding */
+    }
+    .page-title, .section-heading {
+        font-size: 2rem; /* Smaller headings */
+        margin-bottom: 2rem;
+    }
+    .section-subheading {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+        padding: 0 10px; /* Add horizontal padding for smaller screens */
+    }
+
+    /* Grids become single column */
+    .features-grid,
+    .process-grid,
+    .services-grid {
         grid-template-columns: 1fr;
+        gap: 2rem; /* Adjust gap for single column */
+    }
+
+    /* Feature Item & Process Step */
+    .feature-item, .process-step {
+        padding: 2rem; /* Reduce padding */
+    }
+    .feature-item .icon, .process-step .step-icon {
+        font-size: 3rem; /* Smaller icons */
+    }
+    .feature-item h3, .process-step h3 {
+        font-size: 1.4rem; /* Smaller sub-headings */
+    }
+    .process-step .step-number {
+        font-size: 3rem; /* Smaller step number */
+    }
+
+    /* Service Card */
+    .service-card {
+        padding: 2.5rem;
+    }
+    .service-icon {
+        font-size: 3.5rem;
+    }
+    .service-card h3 {
+        font-size: 1.6rem;
+    }
+    .service-card p {
+        font-size: 1rem;
+    }
+    .service-features li {
+        font-size: 0.95rem; /* Slightly smaller feature text */
+        padding-left: 20px;
+    }
+    .service-features li .fa-check-circle {
+        top: 6px;
+    }
+
+    /* Technologies Section */
+    .technologies-grid {
         gap: 2rem;
     }
-
-    .page-title, .section-heading {
-        font-size: 2rem;
+    .tech-item {
+        width: 120px; /* Smaller width for tech items */
+    }
+    .tech-item img {
+        width: 60px;
+        height: 60px;
+    }
+    .tech-item .icon {
+        font-size: 3rem;
+    }
+    .tech-item p {
+        font-size: 0.9rem;
     }
 
-    .services-grid, .features-grid, .process-grid, .testimonial-grid {
-        grid-template-columns: 1fr;
+    /* Contact Page */
+    .contact-info {
+        padding: 1.5rem; /* Reduce padding for contact info box */
     }
-
-    .stats { /* This section should ideally be removed if about.html is gone */
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .contact-details li {
-        flex-direction: column;
+        flex-direction: column; /* Stack icon and text vertically */
         text-align: center;
         gap: 0.5rem;
-        padding: 1rem;
+        padding: 0.8rem;
+        font-size: 1.1rem;
+        width: 100%; /* Full width for each contact detail */
     }
-
     .contact-details i {
-        margin: 0 0 10px 0;
+        margin: 0 0 8px 0; /* Adjust icon margin */
+        font-size: 1.3rem; /* Smaller icon size */
+        width: auto;
+    }
+    .contact-form {
+        gap: 1rem; /* Smaller gap between form fields */
+    }
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px 15px; /* Smaller padding in form fields */
+        font-size: 1rem;
+    }
+    .contact-form button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
     }
 
     .social-links-contact {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        flex-direction: row; /* Keep social icons in a row, but reduce gap */
+        flex-wrap: wrap; /* Allow wrapping if too many */
+        gap: 1.5rem;
     }
+    .social-link-contact {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+    }
+
+    /* Footer */
     .footer-content {
+        grid-template-columns: 1fr; /* Footer sections stack vertically */
         text-align: center;
     }
     .social-links-footer {
-        justify-content: center;
+        justify-content: center; /* Center social links in footer */
     }
 
     /* WhatsApp Button Responsive Adjustments */
@@ -813,6 +912,44 @@ footer {
         right: 20px;
         width: 50px;
         height: 50px;
+        font-size: 1.8rem; /* Adjusted icon size for mobile */
+    }
+}
+
+/* Even Smaller Screens (e.g., small phones like iPhone 5/SE) */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.3rem; /* Even smaller logo text */
+    }
+    .logo img {
+        height: 35px; /* Even smaller logo image */
+    }
+    .mobile-menu {
+        font-size: 1.2rem; /* Smallest menu button size */
+        padding: 6px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+    .page-title, .section-heading {
         font-size: 1.8rem;
+    }
+    .section-subheading {
+        font-size: 0.9rem;
+    }
+    .footer-section p,
+    .footer-section a,
+    .footer-section ul {
+        font-size: 0.9rem;
+    }
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+        font-size: 1.6rem;
+        bottom: 15px;
+        right: 15px;
     }
 }
