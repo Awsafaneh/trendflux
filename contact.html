@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang-en="TrendFlux Agency - Contact Us" data-lang-ar="TrendFlux Agency - تواصل معنا"></title>
+    <title>TrendFlux Agency - تواصل معنا</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="lang-switcher">
-        <button id="langToggle" class="lang-button"></button>
-    </div>
-
     <nav>
         <div class="container">
             <div class="logo">
@@ -19,9 +15,10 @@
                 <span class="logo-text">TrendFlux Agency</span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" data-lang-en="Home" data-lang-ar="الرئيسية"></a></li>
-                <li><a href="services.html" data-lang-en="Services" data-lang-ar="الخدمات"></a></li>
-                <li><a href="contact.html" data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
@@ -29,98 +26,92 @@
         </div>
     </nav>
 
-    <section id="contact" class="page-section contact-section">
+    <section id="contact" class="page-section contact-page">
         <div class="container">
-            <h2 class="page-title animate-on-scroll" data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></h2>
-            <div class="contact-content">
-                <div class="contact-info animate-on-scroll">
-                    <h2 data-lang-en="We are here to serve you!" data-lang-ar="نحن هنا لخدمتك!"></h2>
-                    <ul class="contact-details">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span data-lang-en="Amman, Jordan - Mecca Street, Building 123" data-lang-ar="عمان، الأردن - شارع مكة، مبنى 123"></span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <span data-lang-en="+962 7XXXXXXXX" data-lang-ar="+962 7XXXXXXXX"></span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span data-lang-en="info@trendflux.com" data-lang-ar="info@trendflux.com"></span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span data-lang-en="Sunday - Thursday: 9:00 AM - 5:00 PM" data-lang-ar="الأحد - الخميس: 9:00 صباحاً - 5:00 مساءً"></span>
-                        </li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="#" class="social-link" target="_blank">
-                            <i class="fab fa-facebook"></i> <span data-lang-en="Facebook" data-lang-ar="فيسبوك"></span>
-                        </a>
-                        <a href="#" class="social-link" target="_blank">
-                            <i class="fab fa-instagram"></i> <span data-lang-en="Instagram" data-lang-ar="انستغرام"></span>
-                        </a>
-                        <a href="#" class="social-link" target="_blank">
-                            <i class="fab fa-linkedin"></i> <span data-lang-en="LinkedIn" data-lang-ar="لينكد إن"></span>
-                        </a>
-                        <a href="#" class="social-link" target="_blank">
-                            <i class="fab fa-twitter"></i> <span data-lang-en="Twitter" data-lang-ar="تويتر"></span>
-                        </a>
+            <h2 class="page-title animate-on-scroll" style="color: white;">تواصل معنا</h2>
+            <div class="contact-info animate-on-scroll">
+                <p style="font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">
+                    يسعدنا تواصلكم معنا للاستفسارات، طلب عرض أسعار، أو لبدء مشروعكم الرقمي الجديد. 
+                    فريقنا المتخصص مستعد لتقديم الدعم والمساعدة اللازمة.
+                </p>
+                <ul class="contact-details">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>عمان، الأردن</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span><a href="tel:+9627XXXXXXXX" style="color: inherit; text-decoration: none;">+962 7XXXXXXXX</a></span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:info@trendflux.com" style="color: inherit; text-decoration: none;">info@trendflux.com</a></span>
+                    </li>
+                </ul>
+
+                <h3 class="section-heading animate-on-scroll" style="color: white; margin-top: 4rem;">أرسل لنا رسالة</h3>
+                <p class="section-subheading animate-on-scroll" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                    سوف يقوم أحد ممثلينا بالرد عليكم في أقرب وقت ممكن.
+                </p>
+                <form class="contact-form animate-on-scroll">
+                    <input type="text" placeholder="اسمك الكامل" required>
+                    <input type="email" placeholder="بريدك الإلكتروني" required>
+                    <input type="text" placeholder="موضوع الرسالة">
+                    <textarea placeholder="رسالتك" rows="6" required></textarea>
+                    <button type="submit">إرسال الرسالة</button>
+                </form>
+
+                <h3 class="section-heading animate-on-scroll" style="color: white; margin-top: 4rem;">موقعنا على الخريطة</h3>
+                <div class="map-embed animate-on-scroll">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108491.56497434778!2d35.80164625!3d31.9704403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b5fb85d778347%3A0x317706f15777732a!2sAmman%2C%20Jordan!5e0!3m2!1sen!2sjo!4v1700000000000!5m2!1sen!2sjo" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+
+                <h3 class="section-heading animate-on-scroll" style="color: white; margin-top: 4rem;">تابعنا على وسائل التواصل</h3>
+                <div class="social-links-contact animate-on-scroll">
+                    <a href="https://instagram.com/trendflux.jo" target="_blank" class="social-link-contact" aria-label="Instagram Profile">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/youragency" target="_blank" class="social-link-contact" aria-label="Facebook Page">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/youragency" target="_blank" class="social-link-contact" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                     </div>
-                </div>
-                <div class="contact-form animate-on-scroll">
-                    <h3 data-lang-en="Send us a message!" data-lang-ar="أرسل لنا رسالة!"></h3>
-                    <form action="#" method="POST">
-                        <div class="form-group">
-                            <label for="name" data-lang-en="Your Name:" data-lang-ar="اسمك:"></label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" data-lang-en="Your Email:" data-lang-ar="بريدك الإلكتروني:"></label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" data-lang-en="Your Message:" data-lang-ar="رسالتك:"></label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-button" data-lang-en="Send Message" data-lang-ar="أرسل الرسالة"></button>
-                    </form>
-                </div>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/9627XXXXXXXX" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <footer>
         <div class="container footer-content">
             <div class="footer-section">
-                <h3 data-lang-en="TrendFlux Agency" data-lang-ar="TrendFlux Agency"></h3>
-                <p data-lang-en="A leading digital marketing agency in Amman, Jordan, combining innovation and expertise to achieve the best results for our clients." data-lang-ar="وكالة تسويق رقمي رائدة في عمان، الأردن، نجمع بين الابتكار والخبرة لتحقيق أفضل النتائج لعملائنا."></p>
+                <h3>TrendFlux Agency</h3>
+                <p>وكالة رائدة في التسويق الرقمي وتطوير المواقع في عمان، الأردن. نلتزم بتقديم حلول مبتكرة لعملائنا.</p>
             </div>
             <div class="footer-section">
-                <h3 data-lang-en="Quick Links" data-lang-ar="روابط سريعة"></h3>
-                <p><a href="index.html" data-lang-en="Home" data-lang-ar="الرئيسية"></a></p>
-                <p><a href="services.html" data-lang-en="Services" data-lang-ar="خدماتنا"></a></p>
-                <p><a href="contact.html" data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></a></p>
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="services.html">خدماتنا</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                </ul>
             </div>
             <div class="footer-section">
-                <h3 data-lang-en="Follow Us" data-lang-ar="تابعنا"></h3>
-                <p><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> <span data-lang-en="Facebook" data-lang-ar="فيسبوك"></span></a></p>
-                <p><a href="#" target="_blank"><i class="fab fa-instagram"></i> <span data-lang-en="Instagram" data-lang-ar="انستغرام"></span></a></p>
-                <p><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> <span data-lang-en="LinkedIn" data-lang-ar="لينكد إن"></span></a></p>
-            </div>
-            <div class="footer-section">
-                <h3 data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></h3>
-                <p data-lang-en="Email: info@trendflux.com" data-lang-ar="البريد الإلكتروني: info@trendflux.com"></p>
-                <p data-lang-en="Phone: +962 7XXXXXXXX" data-lang-ar="الهاتف: +962 7XXXXXXXX"></p>
-                <p data-lang-en="Address: Amman, Jordan - Mecca Street" data-lang-ar="العنوان: عمان، الأردن - شارع مكة"></p>
+                <h3>تواصل معنا</h3>
+                <p><i class="fas fa-map-marker-alt"></i> عمان، الأردن</p>
+                <p><i class="fas fa-phone-alt"></i> +962 7XXXXXXXX</p>
+                <p><i class="fas fa-envelope"></i> info@trendflux.com</p>
+                <div class="social-links-footer">
+                    <a href="https://instagram.com/trendflux.jo" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/youragency" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/youragency" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
         <div class="container">
-            <p data-lang-en="&copy; 2025 TrendFlux Agency. All rights reserved." data-lang-ar="&copy; 2025 TrendFlux Agency. جميع الحقوق محفوظة."></p>
+            <p>&copy; 2025 TrendFlux Agency. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
