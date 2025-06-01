@@ -1,122 +1,85 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang-en="TrendFlux Agency - Home" data-lang-ar="TrendFlux Agency - الرئيسية"></title>
+    <title>TrendFlux Agency - وكالة التسويق الرقمي</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
     <style>
-        /* --- General Styles (Duplicated in every file) --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
-            background: #f8f9fa; /* Light background for general content */
-            color: #333; /* Default text color */
+            background: #f8f9fa;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Color Palette Variables for easier management (still used internally) */
-        :root {
-            --primary-dark-blue: #2F2F7D;
-            --secondary-red-orange: #E74C3C;
-            --accent-red-darker: #C0392B;
-            --light-bg: #f8f9fa;
-            --white: #ffffff;
-            --text-dark: #333;
-            --text-muted: #666;
-            --border-light: #eee;
-        }
-
-        /* --- Language Switcher (Duplicated in every file) --- */
-        .lang-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-        }
-        /* Adjust for RTL direction */
-        html[dir="rtl"] .lang-switcher {
-            left: 20px;
-            right: auto;
-        }
-        .lang-button {
-            padding: 10px 15px;
-            background-color: var(--primary-dark-blue);
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-        .lang-button:hover {
-            background-color: var(--secondary-red-orange);
-        }
-
-        /* --- Navigation (Duplicated in every file) --- */
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.98); /* Slightly transparent white */
-            backdrop-filter: blur(15px); /* Blurry background for modern look */
-            z-index: 1000; /* Ensure nav is above other content */
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
             padding: 1rem 0;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 20px rgba(47, 47, 125, 0.1); /* Subtle shadow */
+            box-shadow: 0 2px 20px rgba(47, 47, 125, 0.1);
         }
+
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
         }
+
         .logo img {
             height: 50px;
             width: auto;
-            border-radius: 8px; /* Slightly rounded corners for logo */
         }
+
         .logo-text {
             font-size: 1.8rem;
             font-weight: bold;
-            color: var(--primary-dark-blue);
-            text-transform: uppercase; /* Make logo text uppercase */
-            letter-spacing: 0.5px;
+            color: #2f2f7d;
         }
+
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem; /* Space between nav items */
+            gap: 2.5rem;
         }
+
         .nav-links a {
             text-decoration: none;
-            color: var(--primary-dark-blue);
+            color: #2f2f7d;
             font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
-            padding: 10px 0; /* Padding for hover effect */
+            padding: 10px 0;
         }
+
         .nav-links a:hover {
-            color: var(--secondary-red-orange);
+            color: #e74c3c;
         }
-        /* Underline effect on hover for nav links */
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -124,42 +87,47 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--secondary-red-orange);
+            background: #e74c3c;
             transition: width 0.3s ease;
         }
+
         .nav-links a:hover::after {
             width: 100%;
         }
+
         .mobile-menu {
-            display: none; /* Hidden by default on desktop */
+            display: none;
             background: none;
             border: none;
-            font-size: 1.8rem; /* Larger icon for mobile */
-            color: var(--primary-dark-blue);
+            font-size: 1.5rem;
+            color: #2f2f7d;
             cursor: pointer;
-            padding: 5px; /* Add some padding around the icon */
         }
 
-        /* --- Page Sections (General padding for all sections) --- */
+        /* Page Sections */
         .page-section {
+            display: none;
             min-height: 100vh;
-            padding-top: 100px; /* To account for fixed nav */
-            padding-bottom: 80px; /* Added padding for content below fold */
-            display: flex; /* Make it a flex container for content alignment */
-            align-items: center; /* Vertically center content */
-            justify-content: center; /* Horizontally center content */
+            padding-top: 100px; /* Adjust for fixed nav */
         }
 
-        /* --- Hero Section (Specific to index.html) --- */
-        .hero {
-            height: 100vh; /* Full viewport height for hero */
-            text-align: center;
-            background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--secondary-red-orange) 100%); /* Gradient background */
-            color: var(--white);
-            position: relative;
-            overflow: hidden; /* Hide overflow for background patterns */
+        .page-section.active {
+            display: block;
         }
-        /* Subtle background pattern for hero section */
+
+        /* Hero Section (Home Page) */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #2f2f7d 0%, #e74c3c 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
         .hero::before {
             content: '';
             position: absolute;
@@ -167,176 +135,318 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,1000 1000,0 1000,1000"/></svg>'); /* Diagonal lines overlay */
-            opacity: 0.1; /* Very subtle */
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1; /* Ensure content is above background pattern */
-            max-width: 800px;
-            padding: 20px; /* Add padding for smaller screens */
-            animation: fadeInUp 1s ease; /* Fade-in animation on load */
-        }
-        .hero h1 {
-            font-size: 4.5rem; /* Larger font size for main heading */
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.4); /* Stronger text shadow */
-            line-height: 1.2;
-        }
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95; /* Slightly less transparent */
-            max-width: 700px; /* Limit paragraph width */
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 18px 45px; /* Larger padding for a more prominent button */
-            background: linear-gradient(45deg, var(--secondary-red-orange), var(--accent-red-darker));
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 50px; /* Pill-shaped button */
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 12px 35px rgba(231, 76, 60, 0.4); /* Stronger shadow */
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-        .cta-button:hover {
-            transform: translateY(-5px); /* Lift on hover */
-            box-shadow: 0 18px 45px rgba(231, 76, 60, 0.5);
-            background: linear-gradient(45deg, var(--accent-red-darker), var(--secondary-red-orange)); /* Subtle gradient shift on hover */
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,1000 1000,0 1000,1000"/></svg>');
         }
 
-        /* --- Page Titles (Applies to Services and Contact, but only used on other pages here) --- */
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.4);
+        }
+
+        /* General Page Styles */
         .page-title {
             text-align: center;
-            font-size: 3.5rem;
-            margin-bottom: 4rem; /* More space below title */
-            color: var(--primary-dark-blue);
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #2f2f7d;
             position: relative;
-            font-weight: 700;
         }
+
         .page-title::after {
             content: '';
             position: absolute;
-            bottom: -15px; /* Adjust position */
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 120px; /* Wider underline */
-            height: 5px; /* Thicker underline */
-            background: linear-gradient(45deg, var(--primary-dark-blue), var(--secondary-red-orange));
-            border-radius: 3px; /* Rounded ends for underline */
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #2f2f7d, #e74c3c);
         }
 
+        /* Services Page */
+        .services-page {
+            padding: 50px 0;
+            background: #f8f9fa;
+        }
 
-        /* --- Floating WhatsApp Button (Duplicated in every file) --- */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 80px; /* Space from bottom */
-            right: 20px; /* Default for LTR */
-            background-color: #25d366; /* Standard WhatsApp green */
-            color: var(--white);
-            border-radius: 50%; /* Circular button */
-            width: 65px; /* Larger size */
-            height: 65px;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(47, 47, 125, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid #e74c3c;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(231, 76, 60, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(47, 47, 125, 0.15);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            color: #e74c3c;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #2f2f7d;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: right;
+            margin-top: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #2f2f7d;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-right: 25px;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* About Page */
+        .about-page {
+            padding: 50px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2f2f7d;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(47, 47, 125, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #2f2f7d;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Contact Page */
+        .contact-page {
+            padding: 50px 0;
+            background: linear-gradient(135deg, #2f2f7d 0%, #e74c3c 100%);
+            color: white;
+            text-align: center; /* Center content on contact page */
+        }
+
+        .contact-info {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: white; /* Ensure title is white */
+        }
+
+        .contact-details {
+            list-style: none;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center details */
+            gap: 1.5rem;
+        }
+
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            width: fit-content; /* Make list items fit content */
+            margin: 0 auto; /* Center list items */
+        }
+
+        .contact-details i {
+            margin-left: 1.5rem;
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+        }
+
+        .social-links-contact { /* New class for social links in contact page */
+            display: flex;
+            justify-content: center; /* Center social links */
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .social-link-contact {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem; /* Larger icon */
-            box-shadow: 0 6px 16px rgba(0,0,0,0.35); /* Stronger shadow */
-            z-index: 999;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        html[dir="rtl"] .whatsapp-float {
-            left: 20px;
-            right: auto;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.15); /* Pop out effect on hover */
-            background-color: #128C7E; /* Darker green on hover */
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50%; /* Make them circular */
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
-        /* --- Footer (Duplicated in every file) --- */
+        .social-link-contact:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Footer */
         footer {
-            background: var(--primary-dark-blue);
-            color: var(--white);
+            background: #2f2f7d;
+            color: white;
             text-align: center;
             padding: 3rem 0;
-            border-top: 5px solid var(--secondary-red-orange); /* Top border for distinction */
         }
+
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider columns */
-            gap: 2.5rem; /* More space between sections */
-            margin-bottom: 2.5rem;
-            padding: 0 20px; /* Ensure padding for smaller screens */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
-        .footer-section {
-            text-align: left; /* Default for LTR */
-            padding: 15px; /* Padding for each footer section */
-        }
-        html[dir="rtl"] .footer-section {
-            text-align: right; /* Align text to right for RTL */
-        }
+
         .footer-section h3 {
-            color: var(--secondary-red-orange);
-            margin-bottom: 1.2rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 5px;
+            color: #e74c3c;
+            margin-bottom: 1rem;
         }
-        .footer-section h3::after {
-            content: '';
-            position: absolute;
-            left: 0; /* Underline for heading */
-            bottom: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--white);
-            border-radius: 2px;
-        }
-        html[dir="rtl"] .footer-section h3::after {
-            left: auto;
-            right: 0;
-        }
+
         .footer-section p,
         .footer-section a {
-            color: #d1d1d1; /* Lighter grey for text */
+            color: #ccc;
             text-decoration: none;
-            line-height: 2; /* More line height for readability */
-            font-size: 1rem;
-            transition: color 0.3s ease;
+            line-height: 1.8;
         }
+
         .footer-section a:hover {
-            color: var(--secondary-red-orange);
-        }
-        .footer-section .fab {
-            margin-right: 10px; /* Default for LTR */
-            font-size: 1.1rem;
-        }
-        html[dir="rtl"] .footer-section .fab {
-            margin-left: 10px;
-            margin-right: 0;
-        }
-        .footer-section ul { /* For quick links, if you use a list */
-            list-style: none;
-            padding: 0;
-        }
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-        .footer-section ul li a {
-            display: inline-block; /* Allows padding and margin for link area */
-            padding: 5px 0;
+            color: #e74c3c;
         }
 
-
-        /* --- Animations --- */
+        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -347,182 +457,96 @@
                 transform: translateY(0);
             }
         }
+
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease;
         }
+
         .animate-on-scroll.animated {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* --- Responsive Design --- */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-            .hero p {
-                font-size: 1.2rem;
-            }
-            .page-title {
-                font-size: 2.8rem;
-            }
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* Hide desktop nav */
+                display: none;
                 position: absolute;
-                top: 100%; /* Below the nav bar */
-                left: 0; /* Default for LTR */
+                top: 100%;
+                left: 0;
                 width: 100%;
-                background: var(--white);
+                background: white;
                 flex-direction: column;
                 padding: 2rem;
                 box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-                border-top: 1px solid var(--border-light);
             }
-            html[dir="rtl"] .nav-links {
-                left: 0;
-                right: auto;
-            }
+
             .nav-links.active {
-                display: flex; /* Show mobile nav when active */
+                display: flex;
             }
-            .nav-links li {
-                margin-bottom: 1rem; /* Space between mobile links */
-            }
+
             .mobile-menu {
-                display: block; /* Show hamburger icon */
+                display: block;
             }
+
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
+
             .hero p {
                 font-size: 1.1rem;
             }
-            .cta-button {
-                padding: 15px 35px;
-                font-size: 1.1rem;
-            }
-            .page-title {
-                font-size: 2.2rem;
-            }
-            .services-grid {
-                grid-template-columns: 1fr; /* Stack services on mobile */
-            }
-            .service-card {
-                padding: 2.5rem;
-            }
-            .service-icon {
-                font-size: 3.5rem;
-            }
-            .service-card h3 {
-                font-size: 1.6rem;
-            }
-            .service-card p {
-                font-size: 1rem;
-            }
-            .contact-content {
-                grid-template-columns: 1fr; /* Stack contact sections */
+
+            .about-content {
+                grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            .contact-info,
-            .contact-form {
-                padding: 2.5rem;
-            }
-            .contact-info h2 {
-                font-size: 2rem;
-            }
-            .contact-form h3 {
-                font-size: 1.8rem;
-            }
-            .social-links {
-                grid-template-columns: 1fr; /* Stack social links */
-            }
-            .footer-content {
-                grid-template-columns: 1fr; /* Stack footer sections */
-                text-align: center; /* Center footer sections on mobile */
-            }
-            .footer-section {
-                text-align: center;
-            }
-            .footer-section h3::after { /* Adjust underline for center aligned headings */
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .whatsapp-float {
-                width: 55px;
-                height: 55px;
-                font-size: 2rem;
-                bottom: 20px;
-                right: 20px;
-            }
-            html[dir="rtl"] .whatsapp-float {
-                left: 20px;
-                right: auto;
-            }
-            .lang-switcher {
-                top: 15px;
-                right: 15px;
-            }
-            html[dir="rtl"] .lang-switcher {
-                left: 15px;
-                right: auto;
-            }
-        }
-        @media (max-width: 480px) {
-            .logo-text {
-                font-size: 1.5rem;
-            }
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .cta-button {
-                padding: 12px 30px;
-                font-size: 1rem;
-            }
+
             .page-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
-            .service-card {
-                padding: 1.5rem;
+
+            .services-grid {
+                grid-template-columns: 1fr;
             }
-            .service-icon {
-                font-size: 3rem;
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
             }
-            .service-card h3 {
-                font-size: 1.3rem;
-            }
-            .contact-info,
-            .contact-form {
-                padding: 2rem;
-            }
+
             .contact-details li {
-                font-size: 1.1rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+                padding: 1rem;
+            }
+
+            .contact-details i {
+                margin: 0 0 10px 0;
+            }
+
+            .social-links-contact {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="lang-switcher">
-        <button id="langToggle" class="lang-button" data-lang-en="العربية" data-lang-ar="English"></button>
-    </div>
-
     <nav>
         <div class="container">
             <div class="logo">
-                <img src="trendflux (3).jpg" alt="TrendFlux Agency Logo">
-                <span class="logo-text" data-lang-en="TrendFlux Agency" data-lang-ar="TrendFlux Agency"></span>
+                <img src="logo.png" alt="TrendFlux Agency Logo">
+                <span class="logo-text">TrendFlux Agency</span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" data-lang-en="Home" data-lang-ar="الرئيسية"></a></li>
-                <li><a href="services.html" data-lang-en="Services" data-lang-ar="الخدمات"></a></li>
-                <li><a href="contact.html" data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></a></li>
+                <li><a href="#" onclick="showPage('home')">الرئيسية</a></li>
+                <li><a href="#" onclick="showPage('services')">الخدمات</a></li>
+                <li><a href="#" onclick="showPage('about')">من نحن</a></li>
+                <li><a href="#" onclick="showPage('contact')">تواصل معنا</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
@@ -530,124 +554,220 @@
         </div>
     </nav>
 
-    <section id="home" class="page-section hero">
-        <div class="hero-content animate-on-scroll">
-            <h1 data-lang-en="Ignite Your Digital Presence with TrendFlux Agency" data-lang-ar="أشعل حضورك الرقمي مع TrendFlux Agency"></h1>
-            <p data-lang-en="TrendFlux Agency is a dynamic and innovative digital marketing powerhouse based in the heart of Amman, Jordan. We are passionate about crafting bespoke, integrated digital solutions that propel businesses forward in the competitive online landscape. From strategic digital marketing campaigns and cutting-edge web development to compelling brand identity design and captivating digital creativity, our expert team is committed to delivering measurable results and fostering lasting growth for our partners. Discover how our unique blend of creativity, technology, and strategic insight can transform your brand's digital journey." data-lang-ar="TrendFlux Agency هي وكالة تسويق رقمي ديناميكية ومبتكرة مقرها في قلب عمان، الأردن. نحن متحمسون لصياغة حلول رقمية متكاملة ومصممة خصيصًا لدفع الأعمال إلى الأمام في المشهد التنافسي عبر الإنترنت. من الحملات التسويقية الرقمية الاستراتيجية وتطوير الويب المتطور إلى تصميم الهوية التجارية الجذاب والإبداع الرقمي الآسر، يلتزم فريق الخبراء لدينا بتقديم نتائج قابلة للقياس وتعزيز النمو المستمر لشركائنا. اكتشف كيف يمكن لمزيجنا الفريد من الإبداع والتكنولوجيا والرؤى الاستراتيجية أن يحول رحلة علامتك التجارية الرقمية."></p>
-            <a href="services.html" class="cta-button" data-lang-en="Explore Our Comprehensive Services" data-lang-ar="استكشف خدماتنا الشاملة"></a>
-            <p data-lang-en="We believe in building strong, lasting relationships with our clients, understanding their unique challenges, and delivering tailored solutions that exceed expectations. Our commitment to excellence is reflected in every project we undertake, ensuring that your brand not only stands out but thrives in the digital realm. Join us on a journey to digital success." data-lang-ar="نحن نؤمن ببناء علاقات قوية ودائمة مع عملائنا، وفهم تحدياتهم الفريدة، وتقديم حلول مخصصة تتجاوز التوقعات. ينعكس التزامنا بالتميز في كل مشروع نقوم به، مما يضمن أن علامتك التجارية لا تبرز فحسب، بل تزدهر في العالم الرقمي. انضم إلينا في رحلة نحو النجاح الرقمي."></p>
-            <p data-lang-en="Your success is our priority, and we are dedicated to providing unparalleled support and innovative strategies that drive real business value. Let's create something extraordinary together." data-lang-ar="نجاحك هو أولويتنا، ونحن ملتزمون بتقديم دعم لا مثيل له واستراتيجيات مبتكرة تدفع قيمة حقيقية لأعمالك. دعونا نصنع شيئًا استثنائيًا معًا."></p>
+    <section id="home" class="page-section active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>TrendFlux Agency</h1>
+                <p>نحن وكالة تسويق رقمي مبدعة في عمان، الأردن، نقدم حلولاً متكاملة للتسويق وتطوير المواقع والهوية التجارية والإبداع الرقمي</p>
+                <a href="#" onclick="showPage('services')" class="cta-button">استكشف خدماتنا</a>
+            </div>
         </div>
     </section>
 
-    <a href="https://wa.me/9627XXXXXXXX" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <section id="services" class="page-section services-page">
+        <div class="container">
+            <h2 class="page-title animate-on-scroll">خدماتنا المتميزة</h2>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>التسويق الرقمي</h3>
+                    <p>نقدم استراتيجيات تسويقية مبتكرة ومدروسة تهدف إلى زيادة الوعي بعلامتك التجارية وجذب العملاء المستهدفين من خلال القنوات الرقمية المختلفة.</p>
+                    <ul class="service-features">
+                        <li>إدارة حسابات وسائل التواصل الاجتماعي</li>
+                        <li>التسويق عبر محركات البحث (SEO & SEM)</li>
+                        <li>حملات إعلانية مدفوعة على Facebook و Google</li>
+                        <li>تسويق المحتوى والتسويق بالعمولة</li>
+                        <li>تحليل البيانات وقياس الأداء</li>
+                    </ul>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>تطوير المواقع الإلكترونية</h3>
+                    <p>نصمم ونطور مواقع إلكترونية احترافية وسريعة الاستجابة باستخدام أحدث التقنيات والمعايير العالمية لضمان تجربة مستخدم مثالية.</p>
+                    <ul class="service-features">
+                        <li>مواقع إلكترونية متجاوبة مع جميع الأجهزة</li>
+                        <li>متاجر إلكترونية متكاملة</li>
+                        <li>أنظمة إدارة المحتوى (CMS)</li>
+                        <li>تطبيقات الويب التفاعلية</li>
+                        <li>الصيانة والدعم الفني المستمر</li>
+                    </ul>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>تصميم الهوية التجارية</h3>
+                    <p>نساعدك في بناء هوية تجارية قوية ومميزة تعكس قيم شركتك ورؤيتها من خلال التصاميم الإبداعية والمفاهيم البصرية المبتكرة.</p>
+                    <ul class="service-features">
+                        <li>تصميم الشعارات والهويات البصرية</li>
+                        <li>دليل الهوية التجارية الشامل</li>
+                        <li>تصميم المطبوعات والكتالوجات</li>
+                        <li>تصميم العبوات والمنتجات</li>
+                        <li>اللافتات والإعلانات الخارجية</li>
+                    </ul>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>الإبداع والتوجه الفني</h3>
+                    <p>فريقنا الإبداعي المتخصص يقدم حلولاً فنية متميزة وأفكاراً مبتكرة للحملات الإعلانية والمحتوى البصري الذي يميز علامتك التجارية.</p>
+                    <ul class="service-features">
+                        <li>الحملات الإعلانية الإبداعية</li>
+                        <li>إنتاج المحتوى البصري والمرئي</li>
+                        <li>التصوير الفوتوغرافي الاحترافي</li>
+                        <li>الرسوم المتحركة والموشن جرافيك</li>
+                        <li>الاستشارات الفنية والإبداعية</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="page-section about-page">
+        <div class="container">
+            <h2 class="page-title animate-on-scroll">من نحن</h2>
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <h2>لماذا تختار TrendFlux Agency؟</h2>
+                    <p>نحن وكالة تسويق رقمي متخصصة ومقرها في عمان، الأردن، تجمع بين الخبرة العملية والإبداع الفني لتقديم حلول تسويقية متكاملة ومبتكرة تلبي احتياجات عملائنا وتحقق أهدافهم التجارية بكفاءة عالية.</p>
+                    <p>يضم فريقنا المتخصص خبراء في مجالات التسويق الرقمي، تطوير المواقع الإلكترونية، التصميم الجرافيكي، والإبداع الفني، مما يضمن تقديم خدمات عالية الجودة تواكب أحدث الاتجاهات والتقنيات في السوق الرقمي.</p>
+                    <p>نؤمن بأن كل عميل فريد وله احتياجاته الخاصة، لذلك نقدم حلولاً مخصصة ومدروسة تناسب طبيعة عملك وميزانيتك، مع متابعة مستمرة وتقييم دوري لضمان تحقيق أفضل النتائج والعائد على الاستثمار.</p>
+                </div>
+                <div class="about-image animate-on-scroll">
+                    <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #2f2f7d, #e74c3c); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat animate-on-scroll">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">عميل راضٍ</div>
+                </div>
+                <div class="stat animate-on-scroll">
+                    <div class="stat-number">250+</div>
+                    <div class="stat-label">مشروع منجز</div>
+                </div>
+                <div class="stat animate-on-scroll">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">سنوات خبرة</div>
+                </div>
+                <div class="stat animate-on-scroll">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">دعم فني</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="page-section contact-page">
+        <div class="container">
+            <h2 class="page-title animate-on-scroll" style="color: white;">تواصل معنا</h2>
+            <div class="contact-info animate-on-scroll">
+                <p style="font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">يسعدنا تواصلكم معنا للاستفسارات أو طلب الخدمات. فريقنا مستعد للإجابة على جميع أسئلتكم.</p>
+                <ul class="contact-details">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>عمان، الأردن</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+962 7XXXXXXXX</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@trendflux.com</span>
+                    </li>
+                </ul>
+                <div class="social-links-contact">
+                    <a href="https://www.instagram.com/youragency" target="_blank" class="social-link-contact">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/youragency" target="_blank" class="social-link-contact">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container footer-content">
             <div class="footer-section">
-                <h3 data-lang-en="About TrendFlux Agency" data-lang-ar="عن TrendFlux Agency"></h3>
-                <p data-lang-en="TrendFlux Agency is a leading digital marketing agency established in Amman, Jordan. We are dedicated to providing innovative and effective digital solutions that help businesses achieve their online goals and maximize their reach in the competitive market. Our team of experts is passionate about combining creativity with technology to deliver outstanding results for our clients. We pride ourselves on our client-centric approach and our ability to adapt to the ever-evolving digital landscape." data-lang-ar="TrendFlux Agency هي وكالة تسويق رقمي رائدة تأسست في عمان، الأردن. نحن ملتزمون بتقديم حلول رقمية مبتكرة وفعالة تساعد الشركات على تحقيق أهدافها عبر الإنترنت وزيادة انتشارها في السوق التنافسي. فريقنا من الخبراء متحمس للجمع بين الإبداع والتكنولوجيا لتقديم نتائج ممتازة لعملائنا. نفخر بنهجنا المتمحور حول العميل وقدرتنا على التكيف مع المشهد الرقمي المتطور باستمرار."></p>
+                <h3>TrendFlux Agency</h3>
+                <p>وكالة رائدة في التسويق الرقمي وتطوير المواقع في عمان، الأردن. نلتزم بتقديم حلول مبتكرة لعملائنا.</p>
             </div>
             <div class="footer-section">
-                <h3 data-lang-en="Quick Navigation" data-lang-ar="روابط سريعة"></h3>
+                <h3>روابط سريعة</h3>
                 <ul>
-                    <li><a href="index.html" data-lang-en="Home" data-lang-ar="الرئيسية"></a></li>
-                    <li><a href="services.html" data-lang-en="Services" data-lang-ar="خدماتنا"></a></li>
-                    <li><a href="contact.html" data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></a></li>
+                    <li><a href="#" onclick="showPage('home')">الرئيسية</a></li>
+                    <li><a href="#" onclick="showPage('services')">خدماتنا</a></li>
+                    <li><a href="#" onclick="showPage('about')">من نحن</a></li>
+                    <li><a href="#" onclick="showPage('contact')">تواصل معنا</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3 data-lang-en="Connect With Us" data-lang-ar="تواصل معنا"></h3>
-                <p><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> <span data-lang-en="Facebook" data-lang-ar="فيسبوك"></span></a></p>
-                <p><a href="#" target="_blank"><i class="fab fa-instagram"></i> <span data-lang-en="Instagram" data-lang-ar="انستغرام"></span></a></p>
-                <p><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> <span data-lang-en="LinkedIn" data-lang-ar="لينكد إن"></span></a></p>
-                <p><a href="#" target="_blank"><i class="fab fa-twitter"></i> <span data-lang-en="Twitter" data-lang-ar="تويتر"></span></a></p>
-                <p><a href="#" target="_blank"><i class="fab fa-youtube"></i> <span data-lang-en="YouTube" data-lang-ar="يوتيوب"></span></a></p>
-            </div>
-            <div class="footer-section">
-                <h3 data-lang-en="Get in Touch" data-lang-ar="ابق على اتصال"></h3>
-                <p data-lang-en="Email: info@trendflux.com" data-lang-ar="البريد الإلكتروني: info@trendflux.com"></p>
-                <p data-lang-en="Phone: +962 7XXXXXXXX" data-lang-ar="الهاتف: +962 7XXXXXXXX"></p>
-                <p data-lang-en="Address: Amman, Jordan - Mecca Street, Building 123, Floor 5" data-lang-ar="العنوان: عمان، الأردن - شارع مكة، مبنى 123، الطابق الخامس"></p>
-                <p data-lang-en="Working Hours: Sun-Thu, 9:00 AM - 5:00 PM" data-lang-ar="ساعات العمل: الأحد - الخميس، 9:00 صباحًا - 5:00 مساءً"></p>
+                <h3>تواصل معنا</h3>
+                <p><i class="fas fa-map-marker-alt"></i> عمان، الأردن</p>
+                <p><i class="fas fa-phone-alt"></i> +962 7XXXXXXXX</p>
+                <p><i class="fas fa-envelope"></i> info@trendflux.com</p>
             </div>
         </div>
         <div class="container">
-            <p data-lang-en="&copy; 2025 TrendFlux Agency. All rights reserved. Designed and Developed with Passion." data-lang-ar="&copy; 2025 TrendFlux Agency. جميع الحقوق محفوظة. تم التصميم والتطوير بشغف."></p>
+            <p>&copy; 2025 TrendFlux Agency. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
     <script>
-        // --- JavaScript for Language Switching, Mobile Menu, and Animations (Duplicated in every file) ---
-        const langToggleBtn = document.getElementById('langToggle');
-        const htmlElement = document.documentElement;
-        // Retrieve language preference from localStorage, default to 'en' (English)
-        let currentLang = localStorage.getItem('lang') || 'en';
-
-        // Function to update all text content based on the selected language
-        function updateContent(lang) {
-            document.querySelectorAll('[data-lang-en]').forEach(element => {
-                // If language is Arabic, use data-lang-ar; otherwise, use data-lang-en
-                element.textContent = lang === 'ar' ? element.getAttribute('data-lang-ar') : element.getAttribute('data-lang-en');
+        // Function to show specific page and hide others
+        function showPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
             });
-            // Update the document title dynamically
-            document.title = document.querySelector('title').getAttribute(`data-lang-${lang}`);
-            // Update the text of the language toggle button
-            langToggleBtn.textContent = lang === 'en' ? 'العربية' : 'English';
-            // Set the document's direction (ltr for English, rtl for Arabic)
-            htmlElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-            // Set the HTML lang attribute
-            htmlElement.setAttribute('lang', lang);
-        }
+            document.getElementById(pageId).classList.add('active');
 
-        // Initial content load: Apply the saved or default language when the page loads
-        updateContent(currentLang);
-
-        // Event listener for the language toggle button
-        langToggleBtn.addEventListener('click', () => {
-            // Toggle the current language between English and Arabic
-            currentLang = currentLang === 'en' ? 'ar' : 'en';
-            // Save the new language preference to localStorage for persistence
-            localStorage.setItem('lang', currentLang);
-            // Update all content on the page with the new language
-            updateContent(currentLang);
-        });
-
-        // Function to toggle the mobile navigation menu's visibility
-        function toggleMobileMenu() {
+            // Close mobile menu if open
             const navLinks = document.getElementById('navLinks');
-            // Add or remove the 'active' class to show/hide the menu
-            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
         }
 
-        // Function to trigger animations for elements as they scroll into view
-        function triggerAnimations() {
-            // Select all elements marked for animation
-            const elements = document.querySelectorAll('.animate-on-scroll');
-            elements.forEach(el => {
-                // Get the position of the element relative to the viewport
-                const rect = el.getBoundingClientRect();
-                // Check if the element is within the viewport, with a 100px buffer
-                if (rect.top < window.innerHeight - 100 && rect.bottom > 0) {
-                    // If visible, add the 'animated' class to trigger the animation
-                    el.classList.add('animated');
-                } else {
-                    // Optional: remove 'animated' class if it scrolls out of view.
-                    // This allows the animation to re-trigger if the user scrolls back.
-                    // el.classList.remove('animated');
-                }
-            });
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
         }
 
-        // Add a scroll event listener to continuously check for elements entering the viewport
-        window.addEventListener('scroll', triggerAnimations);
-
-        // Execute functions when the DOM is fully loaded
+        // Animate elements on scroll
         document.addEventListener('DOMContentLoaded', () => {
-            // Perform an initial check for animations immediately after load
-            triggerAnimations();
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            animateElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Initially show the home page
+            showPage('home');
         });
     </script>
 </body>
