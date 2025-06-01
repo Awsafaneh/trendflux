@@ -1,321 +1,27 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدماتنا - TrendFlux Agency</title>
+    <title data-lang-en="TrendFlux Agency - Services" data-lang-ar="TrendFlux Agency - الخدمات"></title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-            background: #f8f9fa;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(15px);
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 20px rgba(47, 47, 125, 0.1);
-        }
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #2f2f7d;
-        }
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #2f2f7d;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 10px 0;
-        }
-        .nav-links a:hover {
-            color: #e74c3c;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #e74c3c;
-            transition: width 0.3s ease;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        .mobile-menu {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #2f2f7d;
-            cursor: pointer;
-        }
-
-        /* Page Sections */
-        .page-section {
-            min-height: 100vh;
-            padding-top: 100px; /* To account for fixed nav */
-        }
-
-        /* Page Titles */
-        .page-title {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            color: #2f2f7d;
-            position: relative;
-        }
-        .page-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(45deg, #2f2f7d, #e74c3c);
-        }
-
-        /* Services Page */
-        .services-page {
-            padding: 50px 0;
-            background: #f8f9fa;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-        .service-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(47, 47, 125, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border-top: 5px solid #e74c3c; /* Accent top border */
-        }
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(231, 76, 60, 0.1), transparent);
-            transition: left 0.5s;
-        }
-        .service-card:hover::before {
-            left: 100%;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 80px rgba(47, 47, 125, 0.15);
-        }
-        .service-icon {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            color: #e74c3c;
-        }
-        .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #2f2f7d;
-        }
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-        .service-features {
-            list-style: none;
-            text-align: right;
-            margin-top: 2rem;
-        }
-        .service-features li {
-            padding: 0.5rem 0;
-            color: #2f2f7d;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-right: 25px; /* Space for custom bullet */
-        }
-        .service-features li::before {
-            content: '✓'; /* Custom checkmark bullet */
-            position: absolute;
-            right: 0;
-            color: #e74c3c;
-            font-weight: bold;
-        }
-
-        /* Footer */
-        footer {
-            background: #2f2f7d;
-            color: white;
-            text-align: center;
-            padding: 3rem 0;
-        }
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        .footer-section {
-            text-align: right; /* Align text to right for RTL */
-        }
-        .footer-section h3 {
-            color: #e74c3c;
-            margin-bottom: 1rem;
-        }
-        .footer-section p,
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            line-height: 1.8;
-        }
-        .footer-section a:hover {
-            color: #e74c3c;
-        }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 80px; /* Adjusted to be slightly higher */
-            right: 20px; /* For RTL, this will appear on the right */
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-            z-index: 999;
-            transition: transform 0.3s ease;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        .animate-on-scroll.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0; /* Changed to left for RTL */
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 2rem;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .mobile-menu {
-                display: block;
-            }
-            .page-title {
-                font-size: 2rem;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-section {
-                text-align: center; /* Center align footer sections on mobile */
-            }
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 1.8rem;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="lang-switcher">
+        <button id="langToggle" class="lang-button"></button>
+    </div>
+
     <nav>
         <div class="container">
             <div class="logo">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ3aGl0ZSIvPgo8IS0tIE1haW4gVCBzaGFwZSAtLT4KPHJlY3QgeD0iMTY4IiB5PSIxNDUiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTUiIGZpbGw9IiMyRjJGN0QiLz4KPHJlY3QgeD0iMjE2IiB5PSIxNjAiIHdpZHRoPSIxNSIgaGVpZ2h0PSIxMjgiIGZpbGw9IiMyRjJGN0QiLz4KCjwhLS0gUmVkIEYgc2hhcGUgLS0+CjxyZWN0IHg9IjI0MiIgeT0iMTc2IiB3aWR0aD0iODYiIGhlaWdodD0iMTQiIGZpbGw9IiNFNzRDM0MiLz4KPHJlY3QgeD0iMjQyIiB5PSIxNzYiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxMTIiIGZpbGw9IiNFNzRDM0MiLz4KPHJlY3QgeD0iMjQyIiB5PSIyMTQiIHdpZHRoPSI2MiIgaGVpZ2h0PSIxNCIgZmlsbD0iI0U3NEMzQyIvPgoKPCEtLSBUb3AgcmlnaHQgYWNjZW50IC0tPgo8cmVjdCB4PSIzMjYiIHk9IjExNSIgd2lkdGg9IjE0IiBoZWlnaHQ9IjM4IiBmaWxsPSIjRTc0QzNDIi8+CjxyZWN0IHg9IjM0MCIgeT0iMTE1IiB3aWR0aD0iMjQiIGhlaWdodD0iMTQiIGZpbGw9IiNFNzRDM0MiLz4KPHJlY3QgeD0iMzUwIiB5PSIxMTUiIHdpZHRoPSIxNCIgaGVpZ2h0PSIzOCIgZmlsbD0iIzJGMkY3RCIvPgoKPCEtLSBUZXh0IC0tPgo8dGV4dCB4PSIyNTAiIHk9IjM2MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQ4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzJGMkY3RCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VFJFTkRGTFVYPC90ZXh0Pgo8dGV4dCB4PSIyNTAiIHk9IjM5NSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0ibm9ybWFsIiBmaWxsPSIjRTc0QzNDIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iNHB4Ij5BR0VOQ1k8L3RleHQ+Cjwvc3ZnPg==" alt="TrendFlux Agency">
+                <img src="logo.png" alt="TrendFlux Agency Logo">
                 <span class="logo-text">TrendFlux Agency</span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="services.html">الخدمات</a></li>
-                <li><a href="about.html">من نحن</a></li>
-                <li><a href="contact.html">تواصل معنا</a></li>
+                <li><a href="index.html" data-lang-en="Home" data-lang-ar="الرئيسية"></a></li>
+                <li><a href="services.html" data-lang-en="Services" data-lang-ar="الخدمات"></a></li>
+                <li><a href="contact.html" data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
@@ -323,64 +29,64 @@
         </div>
     </nav>
 
-    <section id="services" class="page-section services-page">
+    <section id="services" class="page-section services-section">
         <div class="container">
-            <h2 class="page-title animate-on-scroll">خدماتنا المتميزة</h2>
+            <h2 class="page-title animate-on-scroll" data-lang-en="Our Distinctive Services" data-lang-ar="خدماتنا المتميزة"></h2>
             <div class="services-grid">
                 <div class="service-card animate-on-scroll">
                     <div class="service-icon">
                         <i class="fas fa-bullhorn"></i>
                     </div>
-                    <h3>التسويق الرقمي</h3>
-                    <p>نقدم استراتيجيات تسويقية مبتكرة ومدروسة تهدف إلى زيادة الوعي بعلامتك التجارية وجذب العملاء المستهدفين من خلال القنوات الرقمية المختلفة.</p>
+                    <h3 data-lang-en="Digital Marketing" data-lang-ar="التسويق الرقمي"></h3>
+                    <p data-lang-en="We offer innovative and well-planned marketing strategies to increase brand awareness and attract target customers through various digital channels." data-lang-ar="نقدم استراتيجيات تسويقية مبتكرة ومدروسة تهدف إلى زيادة الوعي بعلامتك التجارية وجذب العملاء المستهدفين من خلال القنوات الرقمية المختلفة."></p>
                     <ul class="service-features">
-                        <li>إدارة حسابات وسائل التواصل الاجتماعي</li>
-                        <li>التسويق عبر محركات البحث (SEO & SEM)</li>
-                        <li>حملات إعلانية مدفوعة على Facebook و Google</li>
-                        <li>تسويق المحتوى والتسويق بالعمولة</li>
-                        <li>تحليل البيانات وقياس الأداء</li>
+                        <li data-lang-en="Social Media Management" data-lang-ar="إدارة حسابات وسائل التواصل الاجتماعي"></li>
+                        <li data-lang-en="Search Engine Marketing (SEO & SEM)" data-lang-ar="التسويق عبر محركات البحث (SEO & SEM)"></li>
+                        <li data-lang-en="Paid Advertising Campaigns on Facebook & Google" data-lang-ar="حملات إعلانية مدفوعة على Facebook و Google"></li>
+                        <li data-lang-en="Content Marketing & Affiliate Marketing" data-lang-ar="تسويق المحتوى والتسويق بالعمولة"></li>
+                        <li data-lang-en="Data Analysis & Performance Measurement" data-lang-ar="تحليل البيانات وقياس الأداء"></li>
                     </ul>
                 </div>
                 <div class="service-card animate-on-scroll">
                     <div class="service-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>تطوير المواقع الإلكترونية</h3>
-                    <p>نصمم ونطور مواقع إلكترونية احترافية وسريعة الاستجابة باستخدام أحدث التقنيات والمعايير العالمية لضمان تجربة مستخدم مثالية.</p>
+                    <h3 data-lang-en="Web Development" data-lang-ar="تطوير المواقع الإلكترونية"></h3>
+                    <p data-lang-en="We design and develop professional, responsive websites using the latest technologies and global standards to ensure an optimal user experience." data-lang-ar="نصمم ونطور مواقع إلكترونية احترافية وسريعة الاستجابة باستخدام أحدث التقنيات والمعايير العالمية لضمان تجربة مستخدم مثالية."></p>
                     <ul class="service-features">
-                        <li>مواقع إلكترونية متجاوبة مع جميع الأجهزة</li>
-                        <li>متاجر إلكترونية متكاملة</li>
-                        <li>أنظمة إدارة المحتوى (CMS)</li>
-                        <li>تطبيقات الويب التفاعلية</li>
-                        <li>الصيانة والدعم الفني المستمر</li>
+                        <li data-lang-en="Responsive Websites for All Devices" data-lang-ar="مواقع إلكترونية متجاوبة مع جميع الأجهزة"></li>
+                        <li data-lang-en="Integrated E-commerce Stores" data-lang-ar="متاجر إلكترونية متكاملة"></li>
+                        <li data-lang-en="Content Management Systems (CMS)" data-lang-ar="أنظمة إدارة المحتوى (CMS)"></li>
+                        <li data-lang-en="Interactive Web Applications" data-lang-ar="تطبيقات الويب التفاعلية"></li>
+                        <li data-lang-en="Continuous Maintenance & Technical Support" data-lang-ar="الصيانة والدعم الفني المستمر"></li>
                     </ul>
                 </div>
                 <div class="service-card animate-on-scroll">
                     <div class="service-icon">
                         <i class="fas fa-palette"></i>
                     </div>
-                    <h3>تصميم الهوية التجارية</h3>
-                    <p>نساعدك في بناء هوية تجارية قوية ومميزة تعكس قيم شركتك ورؤيتها من خلال التصاميم الإبداعية والمفاهيم البصرية المبتكرة.</p>
+                    <h3 data-lang-en="Brand Identity Design" data-lang-ar="تصميم الهوية التجارية"></h3>
+                    <p data-lang-en="We help you build a strong and distinctive brand identity that reflects your company's values and vision through creative designs and innovative visual concepts." data-lang-ar="نساعدك في بناء هوية تجارية قوية ومميزة تعكس قيم شركتك ورؤيتها من خلال التصاميم الإبداعية والمفاهيم البصرية المبتكرة."></p>
                     <ul class="service-features">
-                        <li>تصميم الشعارات والهويات البصرية</li>
-                        <li>دليل الهوية التجارية الشامل</li>
-                        <li>تصميم المطبوعات والكتالوجات</li>
-                        <li>تصميم العبوات والمنتجات</li>
-                        <li>اللافتات والإعلانات الخارجية</li>
+                        <li data-lang-en="Logo & Visual Identity Design" data-lang-ar="تصميم الشعارات والهويات البصرية"></li>
+                        <li data-lang-en="Comprehensive Brand Guidelines" data-lang-ar="دليل الهوية التجارية الشامل"></li>
+                        <li data-lang-en="Print & Catalog Design" data-lang-ar="تصميم المطبوعات والكتالوجات"></li>
+                        <li data-lang-en="Packaging & Product Design" data-lang-ar="تصميم العبوات والمنتجات"></li>
+                        <li data-lang-en="Outdoor Signage & Advertising" data-lang-ar="اللافتات والإعلانات الخارجية"></li>
                     </ul>
                 </div>
                 <div class="service-card animate-on-scroll">
                     <div class="service-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3>الإبداع والتوجه الفني</h3>
-                    <p>فريقنا الإبداعي المتخصص يقدم حلولاً فنية متميزة وأفكاراً مبتكرة للحملات الإعلانية والمحتوى البصري الذي يميز علامتك التجارية.</p>
+                    <h3 data-lang-en="Creative & Art Direction" data-lang-ar="الإبداع والتوجه الفني"></h3>
+                    <p data-lang-en="Our dedicated creative team provides outstanding artistic solutions and innovative ideas for advertising campaigns and visual content that distinguishes your brand." data-lang-ar="فريقنا الإبداعي المتخصص يقدم حلولاً فنية متميزة وأفكاراً مبتكرة للحملات الإعلانية والمحتوى البصري الذي يميز علامتك التجارية."></p>
                     <ul class="service-features">
-                        <li>الحملات الإعلانية الإبداعية</li>
-                        <li>إنتاج المحتوى البصري والمرئي</li>
-                        <li>التصوير الفوتوغرافي الاحترافي</li>
-                        <li>الرسوم المتحركة والموشن جرافيك</li>
-                        <li>الاستشارات الفنية والإبداعية</li>
+                        <li data-lang-en="Creative Advertising Campaigns" data-lang-ar="الحملات الإعلانية الإبداعية"></li>
+                        <li data-lang-en="Visual & Video Content Production" data-lang-ar="إنتاج المحتوى البصري والمرئي"></li>
+                        <li data-lang-en="Professional Photography" data-lang-ar="التصوير الفوتوغرافي الاحترافي"></li>
+                        <li data-lang-en="Animation & Motion Graphics" data-lang-ar="الرسوم المتحركة والموشن جرافيك"></li>
+                        <li data-lang-en="Artistic & Creative Consulting" data-lang-ar="الاستشارات الفنية والإبداعية"></li>
                     </ul>
                 </div>
             </div>
@@ -394,57 +100,33 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-section">
-                <h3>TrendFlux Agency</h3>
-                <p>وكالة تسويق رقمي رائدة في عمان، الأردن، نجمع بين الابتكار والخبرة لتحقيق أفضل النتائج لعملائنا.</p>
+                <h3 data-lang-en="TrendFlux Agency" data-lang-ar="TrendFlux Agency"></h3>
+                <p data-lang-en="A leading digital marketing agency in Amman, Jordan, combining innovation and expertise to achieve the best results for our clients." data-lang-ar="وكالة تسويق رقمي رائدة في عمان، الأردن، نجمع بين الابتكار والخبرة لتحقيق أفضل النتائج لعملائنا."></p>
             </div>
             <div class="footer-section">
-                <h3>روابط سريعة</h3>
-                <p><a href="index.html">الرئيسية</a></p>
-                <p><a href="services.html">خدماتنا</a></p>
-                <p><a href="about.html">من نحن</a></p>
-                <p><a href="contact.html">تواصل معنا</a></p>
+                <h3 data-lang-en="Quick Links" data-lang-ar="روابط سريعة"></h3>
+                <p><a href="index.html" data-lang-en="Home" data-lang-ar="الرئيسية"></a></p>
+                <p><a href="services.html" data-lang-en="Services" data-lang-ar="خدماتنا"></a></p>
+                <p><a href="contact.html" data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></a></p>
             </div>
             <div class="footer-section">
-                <h3>تابعنا</h3>
-                <p><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> فيسبوك</a></p>
-                <p><a href="#" target="_blank"><i class="fab fa-instagram"></i> انستغرام</a></p>
-                <p><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> لينكد إن</a></p>
+                <h3 data-lang-en="Follow Us" data-lang-ar="تابعنا"></h3>
+                <p><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> <span data-lang-en="Facebook" data-lang-ar="فيسبوك"></span></a></p>
+                <p><a href="#" target="_blank"><i class="fab fa-instagram"></i> <span data-lang-en="Instagram" data-lang-ar="انستغرام"></span></a></p>
+                <p><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> <span data-lang-en="LinkedIn" data-lang-ar="لينكد إن"></span></a></p>
             </div>
             <div class="footer-section">
-                <h3>تواصل معنا</h3>
-                <p>البريد الإلكتروني: info@trendflux.com</p>
-                <p>الهاتف: +962 7XXXXXXXX</p>
-                <p>العنوان: عمان، الأردن - شارع مكة</p>
+                <h3 data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></h3>
+                <p data-lang-en="Email: info@trendflux.com" data-lang-ar="البريد الإلكتروني: info@trendflux.com"></p>
+                <p data-lang-en="Phone: +962 7XXXXXXXX" data-lang-ar="الهاتف: +962 7XXXXXXXX"></p>
+                <p data-lang-en="Address: Amman, Jordan - Mecca Street" data-lang-ar="العنوان: عمان، الأردن - شارع مكة"></p>
             </div>
         </div>
         <div class="container">
-            <p>&copy; 2025 TrendFlux Agency. جميع الحقوق محفوظة.</p>
+            <p data-lang-en="&copy; 2025 TrendFlux Agency. All rights reserved." data-lang-ar="&copy; 2025 TrendFlux Agency. جميع الحقوق محفوظة."></p>
         </div>
     </footer>
 
-    <script>
-        // Function to toggle mobile menu
-        function toggleMobileMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        // Function to handle scroll animations
-        function triggerAnimations() {
-            const elements = document.querySelectorAll('.animate-on-scroll');
-            elements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    el.classList.add('animated');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', triggerAnimations);
-
-        document.addEventListener('DOMContentLoaded', () => {
-            triggerAnimations();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
