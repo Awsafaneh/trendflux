@@ -67,4 +67,46 @@ document.addEventListener('DOMContentLoaded', function() {
             history.replaceState({}, document.title, window.location.pathname);
         }
     }
+    // إضافة هذا الكود إلى ملف script.js الموجود
+
+// معالج إرسال النموذج
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('.contact-form');
+    const formMessages = document.getElementById('form-messages');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // إظهار رسالة التحميل
+            formMessages.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
+            formMessages.style.color = '#ffd700';
+            
+            // جمع بيانات النموذج
+            const formData = new FormData(this);
+            
+            // إرسال البيانات باستخدام fetch
+            fetch('send_email.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    formMessages.innerHTML = '<i class="fas fa-check-circle"></i> ' + data.message;
+                    formMessages.style.color = '#4CAF50';
+                    contactForm.reset(); // مسح النموذج
+                } else {
+                    formMessages.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + data.message;
+                    formMessages.style.color = '#f44336';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                formMessages.innerHTML = '<i class="fas fa-exclamation-triangle"></i> حدث خطأ في الإرسال. يرجى المحاولة مرة أخرى.';
+                formMessages.style.color = '#f44336';
+            });
+        });
+    }
 });
+
