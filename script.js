@@ -1,12 +1,14 @@
-// script.js - أضف هذا الكود في نهاية الملفAdd commentMore actions
-// script.js
-
+Add commentMore actions
 // Function to toggle mobile menu
 function toggleMobileMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('active');
 }
 
+// Animate elements on scroll
+document.addEventListener('DOMContentLoaded', () => {
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
 // Shrink navigation bar on scroll
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('nav');
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
+        threshold: 0.1
         threshold: 0.1 // Trigger when 10% of the element is visible
     };
 
@@ -39,11 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animated');
+                observer.unobserve(entry.target);
                 observer.unobserve(entry.target); // Unobserve once animated
             }
         });
     }, observerOptions);
 
+    animateElements.forEach(el => {
+        observer.observe(el);
     document.querySelectorAll('.animate-on-scroll').forEach(element => {
         observer.observe(element);
     });
