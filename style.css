@@ -11,8 +11,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     background: #f8f9fa;
-    direction: rtl; /* Set direction to RTL for Arabic */
-    text-align: right; /* Align text to the right for Arabic */
+    direction: ltr; /* Set direction to LTR for English */
+    text-align: left; /* Align text to the left for English */
     color: #333;
 }
 
@@ -81,7 +81,7 @@ nav .container {
     content: '';
     position: absolute;
     bottom: 0;
-    right: 0; /* Changed to right for RTL */
+    left: 0; /* Changed to left for LTR */
     width: 0;
     height: 2px;
     background: #e74c3c;
@@ -278,8 +278,8 @@ nav .container {
     color: #e74c3c;
     opacity: 0.1;
     position: absolute;
+    right: 15px; /* Changed from left for LTR */
     top: 15px;
-    left: 15px; /* Adjust for RTL */
     z-index: 0;
 }
 
@@ -342,7 +342,7 @@ nav .container {
     font-size: 3rem;
     color: #ffcc00; /* A golden color for quotes */
     margin-bottom: 1.5rem;
-    text-align: right;
+    text-align: left; /* Changed from right for LTR */
 }
 
 .testimonial-card p {
@@ -391,7 +391,7 @@ nav .container {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%; /* Changed to left for RTL animation */
+    left: -100%; /* Remains left for LTR animation to slide left to right */
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(231, 76, 60, 0.1), transparent);
@@ -399,12 +399,7 @@ nav .container {
 }
 
 .service-card:hover::before {
-    left: 100%; /* Changed to left for RTL animation */
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 80px rgba(47, 47, 125, 0.15);
+    left: 100%; /* Remains left for LTR animation to slide left to right */
 }
 
 .service-icon {
@@ -428,7 +423,7 @@ nav .container {
 
 .service-features {
     list-style: none;
-    text-align: right; /* Explicitly right-align for lists */
+    text-align: left; /* Explicitly left-align for lists */
     margin-top: 2rem;
 }
 
@@ -437,7 +432,7 @@ nav .container {
     color: #2f2f7d;
     border-bottom: 1px solid #eee;
     position: relative;
-    padding-right: 25px; /* Adjust padding for bullet */
+    padding-left: 25px; /* Adjust padding for bullet */
     font-size: 1rem;
 }
 
@@ -447,7 +442,7 @@ nav .container {
 
 .service-features li .fa-check-circle {
     position: absolute;
-    right: 0; /* Position bullet to the right */
+    left: 0; /* Position bullet to the left */
     color: #4CAF50; /* Green for checkmark */
     font-weight: bold;
     top: 8px; /* Adjust vertically */
@@ -496,7 +491,7 @@ nav .container {
 }
 
 
-/* About Page (existing - no major changes needed here for now) */
+/* About Page (existing - no major changes needed here for now, assuming its English already) */
 .about-page {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
@@ -614,7 +609,7 @@ nav .container {
 }
 
 .contact-details i {
-    margin-left: 1.5rem; /* Icon to the left of text in RTL */
+    margin-right: 1.5rem; /* Changed from margin-left for LTR */
     font-size: 1.5rem;
     width: 40px;
     text-align: center;
@@ -629,7 +624,7 @@ nav .container {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    text-align: right;
+    text-align: left; /* Changed from right for LTR */
 }
 
 .contact-form input,
@@ -643,7 +638,7 @@ nav .container {
     font-size: 1.1rem;
     outline: none;
     transition: background 0.3s ease;
-    text-align: right; /* RTL input */
+    text-align: left; /* LTR input */
 }
 
 .contact-form input::placeholder,
@@ -728,7 +723,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
-    text-align: right;
+    text-align: left; /* Changed from right for LTR */
 }
 
 .footer-section h3 {
@@ -751,7 +746,7 @@ footer {
 
 .social-links-footer {
     display: flex;
-    justify-content: flex-end; /* Align to right for RTL */
+    justify-content: flex-start; /* Changed from flex-end for LTR */
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -796,7 +791,7 @@ footer {
         display: none;
         position: absolute;
         top: 100%;
-        right: 0; /* Changed to right for RTL */
+        left: 0; /* Changed from right for LTR */
         width: 100%;
         background: white;
         flex-direction: column;
