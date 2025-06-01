@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang-en="TrendFlux Agency - Services" data-lang-ar="TrendFlux Agency - الخدمات"></title>
+    <title>TrendFlux Agency - الخدمات</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="lang-switcher">
-        <button id="langToggle" class="lang-button"></button>
-    </div>
-
     <nav>
         <div class="container">
             <div class="logo">
@@ -19,9 +15,10 @@
                 <span class="logo-text">TrendFlux Agency</span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" data-lang-en="Home" data-lang-ar="الرئيسية"></a></li>
-                <li><a href="services.html" data-lang-en="Services" data-lang-ar="الخدمات"></a></li>
-                <li><a href="contact.html" data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
@@ -29,101 +26,156 @@
         </div>
     </nav>
 
-    <section id="services" class="page-section services-section">
+    <section id="services" class="page-section services-page">
         <div class="container">
-            <h2 class="page-title animate-on-scroll" data-lang-en="Our Distinctive Services" data-lang-ar="خدماتنا المتميزة"></h2>
+            <h2 class="page-title animate-on-scroll">خدماتنا المتميزة</h2>
+            <p class="section-subheading animate-on-scroll">نقدم مجموعة واسعة من الحلول الرقمية المبتكرة المصممة خصيصاً لتعزيز حضورك وتنمية أعمالك.</p>
             <div class="services-grid">
                 <div class="service-card animate-on-scroll">
                     <div class="service-icon">
                         <i class="fas fa-bullhorn"></i>
                     </div>
-                    <h3 data-lang-en="Digital Marketing" data-lang-ar="التسويق الرقمي"></h3>
-                    <p data-lang-en="We offer innovative and well-planned marketing strategies to increase brand awareness and attract target customers through various digital channels." data-lang-ar="نقدم استراتيجيات تسويقية مبتكرة ومدروسة تهدف إلى زيادة الوعي بعلامتك التجارية وجذب العملاء المستهدفين من خلال القنوات الرقمية المختلفة."></p>
+                    <h3>التسويق الرقمي المتكامل</h3>
+                    <p>نعمل على صياغة وتنفيذ استراتيجيات تسويقية رقمية متكاملة ومخصصة، تهدف إلى بناء وعي قوي بعلامتك التجارية، جذب العملاء المستهدفين، وتحويلهم إلى مبيعات حقيقية عبر القنوات الرقمية الأكثر فعالية.</p>
                     <ul class="service-features">
-                        <li data-lang-en="Social Media Management" data-lang-ar="إدارة حسابات وسائل التواصل الاجتماعي"></li>
-                        <li data-lang-en="Search Engine Marketing (SEO & SEM)" data-lang-ar="التسويق عبر محركات البحث (SEO & SEM)"></li>
-                        <li data-lang-en="Paid Advertising Campaigns on Facebook & Google" data-lang-ar="حملات إعلانية مدفوعة على Facebook و Google"></li>
-                        <li data-lang-en="Content Marketing & Affiliate Marketing" data-lang-ar="تسويق المحتوى والتسويق بالعمولة"></li>
-                        <li data-lang-en="Data Analysis & Performance Measurement" data-lang-ar="تحليل البيانات وقياس الأداء"></li>
+                        <li><i class="fas fa-check-circle"></i> تحسين محركات البحث (SEO)</li>
+                        <li><i class="fas fa-check-circle"></i> التسويق عبر وسائل التواصل الاجتماعي (SMM)</li>
+                        <li><i class="fas fa-check-circle"></i> حملات إعلانية مدفوعة (PPC)</li>
+                        <li><i class="fas fa-check-circle"></i> تسويق المحتوى وإنشاء استراتيجيات مبتكرة</li>
+                        <li><i class="fas fa-check-circle"></i> التسويق عبر البريد الإلكتروني</li>
+                        <li><i class="fas fa-check-circle"></i> تحليل البيانات وقياس الأداء</li>
                     </ul>
                 </div>
+
                 <div class="service-card animate-on-scroll">
                     <div class="service-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 data-lang-en="Web Development" data-lang-ar="تطوير المواقع الإلكترونية"></h3>
-                    <p data-lang-en="We design and develop professional, responsive websites using the latest technologies and global standards to ensure an optimal user experience." data-lang-ar="نصمم ونطور مواقع إلكترونية احترافية وسريعة الاستجابة باستخدام أحدث التقنيات والمعايير العالمية لضمان تجربة مستخدم مثالية."></p>
+                    <h3>تطوير وتصميم المواقع الإلكترونية</h3>
+                    <p>نصمم ونطور مواقع إلكترونية احترافية وجذابة، متجاوبة مع جميع الأجهزة، توفر تجربة مستخدم سلسة ومميزة. نضمن أن موقعك لا يبدو رائعًا فحسب، بل يعمل بكفاءة عالية ويسهل الوصول إليه.</p>
                     <ul class="service-features">
-                        <li data-lang-en="Responsive Websites for All Devices" data-lang-ar="مواقع إلكترونية متجاوبة مع جميع الأجهزة"></li>
-                        <li data-lang-en="Integrated E-commerce Stores" data-lang-ar="متاجر إلكترونية متكاملة"></li>
-                        <li data-lang-en="Content Management Systems (CMS)" data-lang-ar="أنظمة إدارة المحتوى (CMS)"></li>
-                        <li data-lang-en="Interactive Web Applications" data-lang-ar="تطبيقات الويب التفاعلية"></li>
-                        <li data-lang-en="Continuous Maintenance & Technical Support" data-lang-ar="الصيانة والدعم الفني المستمر"></li>
+                        <li><i class="fas fa-check-circle"></i> تصميم وتطوير مواقع الشركات والمؤسسات</li>
+                        <li><i class="fas fa-check-circle"></i> بناء متاجر إلكترونية قوية ومستقرة</li>
+                        <li><i class="fas fa-check-circle"></i> تطوير تطبيقات الويب المخصصة (Custom Web Apps)</li>
+                        <li><i class="fas fa-check-circle"></i> تحسين سرعة وأداء المواقع</li>
+                        <li><i class="fas fa-check-circle"></i> صيانة دورية ودعم فني مستمر</li>
+                        <li><i class="fas fa-check-circle"></i> تكامل أنظمة إدارة المحتوى (CMS)</li>
                     </ul>
                 </div>
+
                 <div class="service-card animate-on-scroll">
                     <div class="service-icon">
                         <i class="fas fa-palette"></i>
                     </div>
-                    <h3 data-lang-en="Brand Identity Design" data-lang-ar="تصميم الهوية التجارية"></h3>
-                    <p data-lang-en="We help you build a strong and distinctive brand identity that reflects your company's values and vision through creative designs and innovative visual concepts." data-lang-ar="نساعدك في بناء هوية تجارية قوية ومميزة تعكس قيم شركتك ورؤيتها من خلال التصاميم الإبداعية والمفاهيم البصرية المبتكرة."></p>
+                    <h3>تصميم الهوية التجارية والجرافيك</h3>
+                    <p>نساعدك في بناء هوية تجارية فريدة لا تُنسى تعكس قيم شركتك ورؤيتها، من خلال تصاميم مبتكرة وجذابة بصرياً تميزك عن المنافسين وتترك انطباعاً قوياً لدى جمهورك.</p>
                     <ul class="service-features">
-                        <li data-lang-en="Logo & Visual Identity Design" data-lang-ar="تصميم الشعارات والهويات البصرية"></li>
-                        <li data-lang-en="Comprehensive Brand Guidelines" data-lang-ar="دليل الهوية التجارية الشامل"></li>
-                        <li data-lang-en="Print & Catalog Design" data-lang-ar="تصميم المطبوعات والكتالوجات"></li>
-                        <li data-lang-en="Packaging & Product Design" data-lang-ar="تصميم العبوات والمنتجات"></li>
-                        <li data-lang-en="Outdoor Signage & Advertising" data-lang-ar="اللافتات والإعلانات الخارجية"></li>
+                        <li><i class="fas fa-check-circle"></i> تصميم الشعارات والعلامات التجارية</li>
+                        <li><i class="fas fa-check-circle"></i> دليل الهوية البصرية المتكامل</li>
+                        <li><i class="fas fa-check-circle"></i> تصميم المطبوعات (بروشورات، كروت أعمال، فلايرز)</li>
+                        <li><i class="fas fa-check-circle"></i> تصميم منشورات وسائل التواصل الاجتماعي</li>
+                        <li><i class="fas fa-check-circle"></i> تصميم أغلفة المنتجات والتعبئة</li>
+                        <li><i class="fas fa-check-circle"></i> الرسوم التوضيحية والإنفوجرافيك</li>
                     </ul>
                 </div>
+
                 <div class="service-card animate-on-scroll">
                     <div class="service-icon">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-film"></i>
                     </div>
-                    <h3 data-lang-en="Creative & Art Direction" data-lang-ar="الإبداع والتوجه الفني"></h3>
-                    <p data-lang-en="Our dedicated creative team provides outstanding artistic solutions and innovative ideas for advertising campaigns and visual content that distinguishes your brand." data-lang-ar="فريقنا الإبداعي المتخصص يقدم حلولاً فنية متميزة وأفكاراً مبتكرة للحملات الإعلانية والمحتوى البصري الذي يميز علامتك التجارية."></p>
+                    <h3>إنتاج الفيديو والموشن جرافيك</h3>
+                    <p>نحوّل أفكارك إلى قصص بصرية متحركة وجذابة باستخدام أحدث تقنيات إنتاج الفيديو والموشن جرافيك، لتقديم رسالتك بفعالية أكبر وبشكل يلفت الانتباه.</p>
                     <ul class="service-features">
-                        <li data-lang-en="Creative Advertising Campaigns" data-lang-ar="الحملات الإعلانية الإبداعية"></li>
-                        <li data-lang-en="Visual & Video Content Production" data-lang-ar="إنتاج المحتوى البصري والمرئي"></li>
-                        <li data-lang-en="Professional Photography" data-lang-ar="التصوير الفوتوغرافي الاحترافي"></li>
-                        <li data-lang-en="Animation & Motion Graphics" data-lang-ar="الرسوم المتحركة والموشن جرافيك"></li>
-                        <li data-lang-en="Artistic & Creative Consulting" data-lang-ar="الاستشارات الفنية والإبداعية"></li>
+                        <li><i class="fas fa-check-circle"></i> فيديوهات تعريفية للشركات والخدمات</li>
+                        <li><i class="fas fa-check-circle"></i> إعلانات موشن جرافيك ورسوم متحركة</li>
+                        <li><i class="fas fa-check-circle"></i> فيديوهات توضيحية للمنتجات والخدمات</li>
+                        <li><i class="fas fa-check-circle"></i> تصوير فوتوغرافي احترافي (منتجات، فعاليات)</li>
+                        <li><i class="fas fa-check-circle"></i> مونتاج وإخراج إبداعي للفيديوهات</li>
+                        <li><i class="fas fa-check-circle"></i> إعداد النصوص الصوتية والتعليق الصوتي</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/9627XXXXXXXX" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <section id="technologies" class="page-section technologies-section">
+        <div class="container">
+            <h2 class="section-heading animate-on-scroll">التقنيات التي نستخدمها</h2>
+            <p class="section-subheading animate-on-scroll">نواكب أحدث التقنيات والأدوات لضمان تقديم حلول فعالة ومستقبلية.</p>
+            <div class="technologies-grid">
+                <div class="tech-item animate-on-scroll">
+                    <div class="icon"><i class="fab fa-wordpress"></i></div>
+                    <p>WordPress</p>
+                </div>
+                <div class="tech-item animate-on-scroll">
+                    <div class="icon"><i class="fab fa-html5"></i></div>
+                    <p>HTML5</p>
+                </div>
+                <div class="tech-item animate-on-scroll">
+                    <div class="icon"><i class="fab fa-css3-alt"></i></div>
+                    <p>CSS3</p>
+                </div>
+                <div class="tech-item animate-on-scroll">
+                    <div class="icon"><i class="fab fa-js-square"></i></div>
+                    <p>JavaScript</p>
+                </div>
+                <div class="tech-item animate-on-scroll">
+                    <div class="icon"><i class="fab fa-php"></i></div>
+                    <p>PHP</p>
+                </div>
+                <div class="tech-item animate-on-scroll">
+                    <div class="icon"><i class="fab fa-react"></i></div>
+                    <p>React</p>
+                </div>
+                <div class="tech-item animate-on-scroll">
+                    <div class="icon"><i class="fab fa-node-js"></i></div>
+                    <p>Node.js</p>
+                </div>
+                <div class="tech-item animate-on-scroll">
+                    <div class="icon"><i class="fab fa-google"></i></div>
+                    <p>Google Ads</p>
+                </div>
+                <div class="tech-item animate-on-scroll">
+                    <div class="icon"><i class="fab fa-facebook"></i></div>
+                    <p>Facebook Ads</p>
+                </div>
+                <div class="tech-item animate-on-scroll">
+                    <div class="icon"><i class="fas fa-database"></i></div>
+                    <p>Databases</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container footer-content">
             <div class="footer-section">
-                <h3 data-lang-en="TrendFlux Agency" data-lang-ar="TrendFlux Agency"></h3>
-                <p data-lang-en="A leading digital marketing agency in Amman, Jordan, combining innovation and expertise to achieve the best results for our clients." data-lang-ar="وكالة تسويق رقمي رائدة في عمان، الأردن، نجمع بين الابتكار والخبرة لتحقيق أفضل النتائج لعملائنا."></p>
+                <h3>TrendFlux Agency</h3>
+                <p>وكالة رائدة في التسويق الرقمي وتطوير المواقع في عمان، الأردن. نلتزم بتقديم حلول مبتكرة لعملائنا.</p>
             </div>
             <div class="footer-section">
-                <h3 data-lang-en="Quick Links" data-lang-ar="روابط سريعة"></h3>
-                <p><a href="index.html" data-lang-en="Home" data-lang-ar="الرئيسية"></a></p>
-                <p><a href="services.html" data-lang-en="Services" data-lang-ar="خدماتنا"></a></p>
-                <p><a href="contact.html" data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></a></p>
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="services.html">خدماتنا</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                </ul>
             </div>
             <div class="footer-section">
-                <h3 data-lang-en="Follow Us" data-lang-ar="تابعنا"></h3>
-                <p><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> <span data-lang-en="Facebook" data-lang-ar="فيسبوك"></span></a></p>
-                <p><a href="#" target="_blank"><i class="fab fa-instagram"></i> <span data-lang-en="Instagram" data-lang-ar="انستغرام"></span></a></p>
-                <p><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> <span data-lang-en="LinkedIn" data-lang-ar="لينكد إن"></span></a></p>
-            </div>
-            <div class="footer-section">
-                <h3 data-lang-en="Contact Us" data-lang-ar="تواصل معنا"></h3>
-                <p data-lang-en="Email: info@trendflux.com" data-lang-ar="البريد الإلكتروني: info@trendflux.com"></p>
-                <p data-lang-en="Phone: +962 7XXXXXXXX" data-lang-ar="الهاتف: +962 7XXXXXXXX"></p>
-                <p data-lang-en="Address: Amman, Jordan - Mecca Street" data-lang-ar="العنوان: عمان، الأردن - شارع مكة"></p>
+                <h3>تواصل معنا</h3>
+                <p><i class="fas fa-map-marker-alt"></i> عمان، الأردن</p>
+                <p><i class="fas fa-phone-alt"></i> +962 7XXXXXXXX</p>
+                <p><i class="fas fa-envelope"></i> info@trendflux.com</p>
+                <div class="social-links-footer">
+                    <a href="https://instagram.com/trendflux.jo" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/youragency" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/youragency" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
         <div class="container">
-            <p data-lang-en="&copy; 2025 TrendFlux Agency. All rights reserved." data-lang-ar="&copy; 2025 TrendFlux Agency. جميع الحقوق محفوظة."></p>
+            <p>&copy; 2025 TrendFlux Agency. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
