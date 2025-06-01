@@ -6,19 +6,18 @@
     <title>TrendFlux Agency - وكالة التسويق الرقمي</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        /* General Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
             background: #f8f9fa;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -37,36 +36,30 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 20px rgba(47, 47, 125, 0.1);
         }
-
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-
         .logo img {
             height: 50px;
             width: auto;
         }
-
         .logo-text {
             font-size: 1.8rem;
             font-weight: bold;
             color: #2f2f7d;
         }
-
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2.5rem;
         }
-
         .nav-links a {
             text-decoration: none;
             color: #2f2f7d;
@@ -75,11 +68,9 @@
             position: relative;
             padding: 10px 0;
         }
-
         .nav-links a:hover {
             color: #e74c3c;
         }
-
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -90,11 +81,9 @@
             background: #e74c3c;
             transition: width 0.3s ease;
         }
-
         .nav-links a:hover::after {
             width: 100%;
         }
-
         .mobile-menu {
             display: none;
             background: none;
@@ -104,15 +93,10 @@
             cursor: pointer;
         }
 
-        /* Page Sections */
+        /* Page Sections - For single-page layout only, but kept for consistency if needed */
         .page-section {
-            display: none;
             min-height: 100vh;
-            padding-top: 100px;
-        }
-
-        .page-section.active {
-            display: block;
+            padding-top: 100px; /* To account for fixed nav */
         }
 
         /* Hero Section */
@@ -127,7 +111,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -137,26 +120,22 @@
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,1000 1000,0 1000,1000"/></svg>');
         }
-
         .hero-content {
             position: relative;
             z-index: 1;
             max-width: 800px;
             animation: fadeInUp 1s ease;
         }
-
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             opacity: 0.9;
         }
-
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
@@ -169,18 +148,69 @@
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
         }
-
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(231, 76, 60, 0.4);
         }
 
-        /* Services Page */
-        .services-page {
+        /* About Section (integrated into Home for illustrative purposes) */
+        .about-section {
             padding: 50px 0;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2f2f7d;
+        }
+        .about-text p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .stat {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(47, 47, 125, 0.1);
+            transition: all 0.3s ease;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            color: #2f2f7d;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
+        /* Page Titles */
         .page-title {
             text-align: center;
             font-size: 3rem;
@@ -188,7 +218,6 @@
             color: #2f2f7d;
             position: relative;
         }
-
         .page-title::after {
             content: '';
             position: absolute;
@@ -200,239 +229,6 @@
             background: linear-gradient(45deg, #2f2f7d, #e74c3c);
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(47, 47, 125, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border-top: 5px solid #e74c3c;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(231, 76, 60, 0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .service-card:hover::before {
-            left: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 80px rgba(47, 47, 125, 0.15);
-        }
-
-        .service-icon {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            color: #e74c3c;
-        }
-
-        .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #2f2f7d;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .service-features {
-            list-style: none;
-            text-align: right;
-            margin-top: 2rem;
-        }
-
-        .service-features li {
-            padding: 0.5rem 0;
-            color: #2f2f7d;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-right: 25px;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            position: absolute;
-            right: 0;
-            color: #e74c3c;
-            font-weight: bold;
-        }
-
-        /* About Page */
-        .about-page {
-            padding: 50px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 4rem;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #2f2f7d;
-        }
-
-        .about-text p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(47, 47, 125, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .stat:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #e74c3c;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #2f2f7d;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        /* Contact Page */
-        .contact-page {
-            padding: 50px 0;
-            background: linear-gradient(135deg, #2f2f7d 0%, #e74c3c 100%);
-            color: white;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .contact-info h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-details {
-            list-style: none;
-        }
-
-        .contact-details li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-            font-size: 1.2rem;
-            padding: 1rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-details i {
-            margin-left: 1.5rem;
-            font-size: 1.5rem;
-            width: 40px;
-        }
-
-        .social-links {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            text-decoration: none;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-            background: rgba(255,255,255,0.3);
-        }
-
-        .social-link i {
-            margin-left: 10px;
-            font-size: 1.3rem;
-        }
-
-        .contact-map {
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .map-placeholder {
-            width: 100%;
-            height: 300px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 2rem;
-        }
-
         /* Footer */
         footer {
             background: #2f2f7d;
@@ -440,26 +236,25 @@
             text-align: center;
             padding: 3rem 0;
         }
-
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
         }
-
+        .footer-section {
+            text-align: right; /* Align text to right for RTL */
+        }
         .footer-section h3 {
             color: #e74c3c;
             margin-bottom: 1rem;
         }
-
         .footer-section p,
         .footer-section a {
             color: #ccc;
             text-decoration: none;
             line-height: 1.8;
         }
-
         .footer-section a:hover {
             color: #e74c3c;
         }
@@ -475,74 +270,58 @@
                 transform: translateY(0);
             }
         }
-
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease;
         }
-
         .animate-on-scroll.animated {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
                 position: absolute;
                 top: 100%;
-                left: 0;
+                left: 0; /* Changed to left for RTL */
                 width: 100%;
                 background: white;
                 flex-direction: column;
                 padding: 2rem;
                 box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             }
-
             .nav-links.active {
                 display: flex;
             }
-
             .mobile-menu {
                 display: block;
             }
-
             .hero h1 {
                 font-size: 2.5rem;
             }
-
             .hero p {
                 font-size: 1.1rem;
             }
-
-            .about-content,
-            .contact-content {
+            .about-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-
             .page-title {
                 font-size: 2rem;
             }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
             .stats {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .social-links {
-                grid-template-columns: 1fr;
+            .footer-section {
+                text-align: center; /* Center align footer sections on mobile */
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="logo">
@@ -550,10 +329,10 @@
                 <span class="logo-text">TrendFlux Agency</span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#" onclick="showPage('home')">الرئيسية</a></li>
-                <li><a href="#" onclick="showPage('services')">الخدمات</a></li>
-                <li><a href="#" onclick="showPage('about')">من نحن</a></li>
-                <li><a href="#" onclick="showPage('contact')">تواصل معنا</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
@@ -561,84 +340,17 @@
         </div>
     </nav>
 
-    <!-- Home Page -->
-    <section id="home" class="page-section active">
+    <section id="home" class="page-section">
         <div class="hero">
             <div class="hero-content">
                 <h1>TrendFlux Agency</h1>
                 <p>نحن وكالة تسويق رقمي مبدعة في عمان، الأردن، نقدم حلولاً متكاملة للتسويق وتطوير المواقع والهوية التجارية والإبداع الرقمي</p>
-                <a href="#" onclick="showPage('services')" class="cta-button">استكشف خدماتنا</a>
+                <a href="services.html" class="cta-button">استكشف خدماتنا</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Page -->
-    <section id="services" class="page-section services-page">
-        <div class="container">
-            <h2 class="page-title animate-on-scroll">خدماتنا المتميزة</h2>
-            <div class="services-grid">
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>التسويق الرقمي</h3>
-                    <p>نقدم استراتيجيات تسويقية مبتكرة ومدروسة تهدف إلى زيادة الوعي بعلامتك التجارية وجذب العملاء المستهدفين من خلال القنوات الرقمية المختلفة.</p>
-                    <ul class="service-features">
-                        <li>إدارة حسابات وسائل التواصل الاجتماعي</li>
-                        <li>التسويق عبر محركات البحث (SEO & SEM)</li>
-                        <li>حملات إعلانية مدفوعة على Facebook و Google</li>
-                        <li>تسويق المحتوى والتسويق بالعمولة</li>
-                        <li>تحليل البيانات وقياس الأداء</li>
-                    </ul>
-                </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>تطوير المواقع الإلكترونية</h3>
-                    <p>نصمم ونطور مواقع إلكترونية احترافية وسريعة الاستجابة باستخدام أحدث التقنيات والمعايير العالمية لضمان تجربة مستخدم مثالية.</p>
-                    <ul class="service-features">
-                        <li>مواقع إلكترونية متجاوبة مع جميع الأجهزة</li>
-                        <li>متاجر إلكترونية متكاملة</li>
-                        <li>أنظمة إدارة المحتوى (CMS)</li>
-                        <li>تطبيقات الويب التفاعلية</li>
-                        <li>الصيانة والدعم الفني المستمر</li>
-                    </ul>
-                </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>تصميم الهوية التجارية</h3>
-                    <p>نساعدك في بناء هوية تجارية قوية ومميزة تعكس قيم شركتك ورؤيتها من خلال التصاميم الإبداعية والمفاهيم البصرية المبتكرة.</p>
-                    <ul class="service-features">
-                        <li>تصميم الشعارات والهويات البصرية</li>
-                        <li>دليل الهوية التجارية الشامل</li>
-                        <li>تصميم المطبوعات والكتالوجات</li>
-                        <li>تصميم العبوات والمنتجات</li>
-                        <li>اللافتات والإعلانات الخارجية</li>
-                    </ul>
-                </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>الإبداع والتوجه الفني</h3>
-                    <p>فريقنا الإبداعي المتخصص يقدم حلولاً فنية متميزة وأفكاراً مبتكرة للحملات الإعلانية والمحتوى البصري الذي يميز علامتك التجارية.</p>
-                    <ul class="service-features">
-                        <li>الحملات الإعلانية الإبداعية</li>
-                        <li>إنتاج المحتوى البصري والمرئي</li>
-                        <li>التصوير الفوتوغرافي الاحترافي</li>
-                        <li>الرسوم المتحركة والموشن جرافيك</li>
-                        <li>الاستشارات الفنية والإبداعية</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Page -->
-    <section id="about" class="page-section about-page">
+    <section id="about" class="about-section">
         <div class="container">
             <h2 class="page-title animate-on-scroll">من نحن</h2>
             <div class="about-content">
@@ -675,8 +387,60 @@
         </div>
     </section>
 
-    <!-- Contact Page -->
-    <section id="contact" class="page-section contact-page">
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>TrendFlux Agency</h3>
+                <p>وكالة تسويق رقمي رائدة في عمان، الأردن، نجمع بين الابتكار والخبرة لتحقيق أفضل النتائج لعملائنا.</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <p><a href="index.html">الرئيسية</a></p>
+                <p><a href="services.html">خدماتنا</a></p>
+                <p><a href="about.html">من نحن</a></p>
+                <p><a href="contact.html">تواصل معنا</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>تواصل معنا</h3>
+                <p>البريد الإلكتروني: info@trendflux.com</p>
+                <p>الهاتف: +962 7XXXXXXXX</p>
+                <p>العنوان: عمان، الأردن - شارع مكة</p>
+            </div>
+        </div>
         <div class="container">
-            <h2 class="page-title animate-on-scroll" style="color: white;">تواصل معنا</h2>
-            <div class="contact-
+            <p>&copy; 2025 TrendFlux Agency. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to toggle mobile menu
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Function to handle scroll animations
+        function triggerAnimations() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                // Check if element is in viewport
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.classList.add('animated');
+                } else {
+                    // Optional: remove animated class if out of view to re-animate on scroll back
+                    // el.classList.remove('animated');
+                }
+            });
+        }
+
+        // Event listener for scroll to trigger animations
+        window.addEventListener('scroll', triggerAnimations);
+
+        // Initial trigger for animations on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            triggerAnimations();
+        });
+    </script>
+</body>
+</html>
