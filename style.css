@@ -700,6 +700,188 @@ footer {
     transform: translateY(0);
 }
 
+/* About Us Page Specific Styles */
+.about-page .page-title {
+    color: #2f2f7d; /* Ensure title color for About Us page */
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 5rem;
+    text-align: left;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    color: #2f2f7d;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px; /* Minimum width before wrapping */
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(47, 47, 125, 0.1);
+}
+
+/* Mission and Vision Section */
+.mission-vision-section {
+    background: #f0f4f8;
+    padding: 80px 0;
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.mission-card,
+.vision-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(47, 47, 125, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 5px solid #e74c3c; /* Red border for mission */
+}
+
+.vision-card {
+    border-top: 5px solid #2f2f7d; /* Blue border for vision */
+}
+
+.mission-card:hover,
+.vision-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(47, 47, 125, 0.12);
+}
+
+.mission-card .icon,
+.vision-card .icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: #e74c3c; /* Red for mission icon */
+}
+
+.vision-card .icon {
+    color: #2f2f7d; /* Blue for vision icon */
+}
+
+.mission-card h3,
+.vision-card h3 {
+    font-size: 2rem;
+    color: #2f2f7d;
+    margin-bottom: 1rem;
+}
+
+.mission-card p,
+.vision-card p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Our Team Section */
+.team-section {
+    background: #ffffff;
+    padding: 80px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.team-member {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(47, 47, 125, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid #2f2f7d;
+}
+
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(47, 47, 125, 0.12);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid #e74c3c;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.team-member h3 {
+    font-size: 1.6rem;
+    color: #2f2f7d;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p.title {
+    font-size: 1.1rem;
+    color: #e74c3c;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.team-member-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.team-member-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #f0f4f8;
+    color: #2f2f7d;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.team-member-social a:hover {
+    background: #e74c3c;
+    color: white;
+    transform: translateY(-3px);
+}
+
+
 /* Responsive Adjustments (Media Queries) */
 @media (max-width: 992px) {
     .nav-links {
@@ -710,6 +892,17 @@ footer {
     }
     .page-title, .section-heading {
         font-size: 2.8rem;
+    }
+    .about-content {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center;
+    }
+    .about-image {
+        order: -1; /* Move image above text on smaller screens */
+    }
+    .mission-vision-grid,
+    .team-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
     }
 }
 
@@ -768,6 +961,9 @@ footer {
         height: auto; /* Allow content to dictate height */
         min-height: 80vh; /* Ensure it still takes up significant space */
     }
+    .hero-content {
+        padding: 0 15px; /* Add padding to hero content on small screens */
+    }
     .hero h1 {
         font-size: 2.5rem; /* Smaller heading on mobile */
         margin-bottom: 1rem;
@@ -798,7 +994,9 @@ footer {
     /* Grids become single column */
     .features-grid,
     .process-grid,
-    .services-grid {
+    .services-grid,
+    .mission-vision-grid, /* Added for About Us */
+    .team-grid { /* Added for About Us */
         grid-template-columns: 1fr;
         gap: 2rem; /* Adjust gap for single column */
     }
@@ -828,7 +1026,7 @@ footer {
         font-size: 1.6rem;
     }
     .service-card p {
-        font-size: 1rem;
+        font-size: 1.1rem; /* Kept slightly larger for readability */
     }
     .service-features li {
         font-size: 0.95rem; /* Slightly smaller feature text */
@@ -897,6 +1095,44 @@ footer {
         font-size: 1.8rem;
     }
 
+    /* About Us Page Responsive */
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+    .about-text p {
+        font-size: 1rem;
+    }
+    .mission-card, .vision-card {
+        padding: 2.5rem;
+    }
+    .mission-card .icon, .vision-card .icon {
+        font-size: 3.5rem;
+    }
+    .mission-card h3, .vision-card h3 {
+        font-size: 1.6rem;
+    }
+    .mission-card p, .vision-card p {
+        font-size: 1rem;
+    }
+    .team-member {
+        padding: 1.5rem;
+    }
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+    .team-member h3 {
+        font-size: 1.4rem;
+    }
+    .team-member p.title {
+        font-size: 1rem;
+    }
+    .team-member-social a {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
     /* Footer */
     .footer-content {
         grid-template-columns: 1fr; /* Footer sections stack vertically */
@@ -938,6 +1174,24 @@ footer {
         font-size: 1.8rem;
     }
     .section-subheading {
+        font-size: 0.9rem;
+    }
+    .about-text h2 {
+        font-size: 1.6rem;
+    }
+    .about-text p {
+        font-size: 0.9rem;
+    }
+    .mission-card h3, .vision-card h3 {
+        font-size: 1.4rem;
+    }
+    .mission-card p, .vision-card p {
+        font-size: 0.9rem;
+    }
+    .team-member h3 {
+        font-size: 1.2rem;
+    }
+    .team-member p.title {
         font-size: 0.9rem;
     }
     .footer-section p,
