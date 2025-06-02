@@ -7,6 +7,210 @@
     <link rel="icon" href="logo.svg" type="image/svg+xml">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for the redesigned About page */
+        .about-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 5rem auto;
+            padding: 3rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(47, 47, 125, 0.1);
+        }
+
+        .about-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-section-redesigned {
+            background: #f8f9fa;
+            padding: 5rem 0;
+            margin-top: 3rem;
+        }
+
+        .team-grid-redesigned {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .team-member-redesigned {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(47, 47, 125, 0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid #e74c3c;
+        }
+
+        .team-member-redesigned:nth-child(2) {
+            border-top: 5px solid #2f2f7d;
+        }
+
+        .team-member-redesigned:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(47, 47, 125, 0.15);
+        }
+
+        .member-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #f0f4f8;
+        }
+
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+        }
+
+        .team-member-redesigned:nth-child(2) .member-avatar {
+            background: linear-gradient(135deg, #2f2f7d, #1e1e4f);
+            box-shadow: 0 10px 30px rgba(47, 47, 125, 0.3);
+        }
+
+        .member-name {
+            font-size: 2rem;
+            color: #2f2f7d;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .member-role {
+            font-size: 1.2rem;
+            color: #e74c3c;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .team-member-redesigned:nth-child(2) .skill-item {
+            border-left: 4px solid #2f2f7d;
+        }
+
+        .skill-item:hover {
+            transform: translateX(5px);
+            background: #f0f4f8;
+        }
+
+        .skill-icon {
+            font-size: 1.5rem;
+            color: #e74c3c;
+            margin-right: 1rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .team-member-redesigned:nth-child(2) .skill-icon {
+            color: #2f2f7d;
+        }
+
+        .skill-text {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #2f2f7d 0%, #e74c3c 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .team-grid-redesigned {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .team-member-redesigned {
+                padding: 2rem;
+            }
+            
+            .member-avatar {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5rem;
+            }
+            
+            .member-name {
+                font-size: 1.6rem;
+            }
+            
+            .about-intro {
+                padding: 2rem;
+                margin-bottom: 3rem;
+            }
+            
+            .about-intro p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -30,45 +234,116 @@
     <section id="about" class="page-section about-page">
         <div class="container">
             <h2 class="page-title animate-on-scroll">About TrendFlux Agency</h2>
-            <div class="about-content animate-on-scroll">
-                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #555;">
+            
+            <div class="about-intro animate-on-scroll">
+                <p>
                     TrendFlux Agency was founded in 2025 with a clear vision: to empower businesses in the digital realm. We believe in harnessing the power of innovation and creativity to deliver outstanding results for our clients.
                 </p>
-                <p style="font-size: 1.2rem; margin-bottom: 3rem; color: #555;">
+                <p>
                     Our integrated team is comprised of highly skilled professionals with over 5 years of collective experience in digital marketing, web development, and graphic design. We are dedicated to providing comprehensive and customized digital solutions that drive growth and ensure your brand stands out.
                 </p>
+            </div>
 
-                <h3 class="section-heading animate-on-scroll" style="margin-top: 4rem;">Meet Our Team</h3>
-                <p class="section-subheading animate-on-scroll" style="margin-bottom: 3rem; color: #666;">
-                    Our experts are the driving force behind TrendFlux Agency's success.
-                </p>
-
-                <div class="team-grid">
-                    <div class="team-member animate-on-scroll">
-                        <div class="member-icon">
-                            <i class="fas fa-user-tie"></i> </div>
-                        <h4>Aws Afanh</h4>
-                        <p class="role">Founder & Lead Strategist</p>
-                        <ul class="skills-list">
-                            <li><i class="fas fa-laptop-code"></i> Website Developer</li>
-                            <li><i class="fas fa-chart-bar"></i> Digital Marketing</li>
-                            <li><i class="fas fa-ad"></i> Advertising Strategist</li>
-                            <li><i class="fas fa-rocket"></i> Full Stack Developer</li>
-                        </ul>
+            <div class="stats-section">
+                <div class="container">
+                    <h3 class="section-heading" style="color: white; margin-bottom: 1rem;">Our Impact in Numbers</h3>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem;">Delivering excellence through measurable results</p>
+                    <div class="stats-grid">
+                        <div class="stat-item animate-on-scroll">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item animate-on-scroll">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item animate-on-scroll">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        <div class="stat-item animate-on-scroll">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support Available</div>
+                        </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="team-member animate-on-scroll">
-                        <div class="member-icon">
-                            <i class="fas fa-terminal"></i> </div>
-                        <h4>Laith Abu Sleem</h4>
-                        <p class="role">Software Engineer</p>
-                        <ul class="skills-list">
-                            <li><i class="fas fa-shield-alt"></i> Cyber Security</li>
-                            <li><i class="fab fa-python"></i> Python</li>
-                            <li><i class="fas fa-globe"></i> Website Developer</li>
-                            <li><i class="fas fa-paint-brush"></i> Graphic Design</li>
-                            <li><i class="fas fa-mobile-alt"></i> App Development</li>
-                        </ul>
+            <div class="team-section-redesigned">
+                <div class="container">
+                    <h3 class="section-heading animate-on-scroll">Meet Our Expert Team</h3>
+                    <p class="section-subheading animate-on-scroll">
+                        Our passionate professionals are the driving force behind TrendFlux Agency's success, bringing years of expertise and innovation to every project.
+                    </p>
+
+                    <div class="team-grid-redesigned">
+                        <div class="team-member-redesigned animate-on-scroll">
+                            <div class="member-header">
+                                <div class="member-avatar">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h4 class="member-name">Aws Afaneh</h4>
+                                <p class="member-role">Founder & Lead Strategist</p>
+                                <p class="member-bio">
+                                    As the visionary founder of TrendFlux Agency, Aws combines strategic thinking with hands-on technical expertise. With a passion for digital innovation, he leads our team in delivering cutting-edge solutions that drive business growth.
+                                </p>
+                            </div>
+                            
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <i class="skill-icon fas fa-laptop-code"></i>
+                                    <span class="skill-text">Full Stack Web Development</span>
+                                </div>
+                                <div class="skill-item">
+                                    <i class="skill-icon fas fa-chart-line"></i>
+                                    <span class="skill-text">Digital Marketing Strategy</span>
+                                </div>
+                                <div class="skill-item">
+                                    <i class="skill-icon fas fa-bullhorn"></i>
+                                    <span class="skill-text">Advertising & Campaign Management</span>
+                                </div>
+                                <div class="skill-item">
+                                    <i class="skill-icon fas fa-rocket"></i>
+                                    <span class="skill-text">Business Growth Consulting</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="team-member-redesigned animate-on-scroll">
+                            <div class="member-header">
+                                <div class="member-avatar">
+                                    <i class="fas fa-terminal"></i>
+                                </div>
+                                <h4 class="member-name">Laith Abu Sleem</h4>
+                                <p class="member-role">Senior Software Engineer</p>
+                                <p class="member-bio">
+                                    Laith brings robust technical expertise and security-first thinking to every project. His diverse skill set spans from cybersecurity to mobile app development, ensuring our solutions are both innovative and secure.
+                                </p>
+                            </div>
+                            
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <i class="skill-icon fas fa-shield-alt"></i>
+                                    <span class="skill-text">Cybersecurity & Data Protection</span>
+                                </div>
+                                <div class="skill-item">
+                                    <i class="skill-icon fab fa-python"></i>
+                                    <span class="skill-text">Python Development & Automation</span>
+                                </div>
+                                <div class="skill-item">
+                                    <i class="skill-icon fas fa-globe"></i>
+                                    <span class="skill-text">Advanced Web Development</span>
+                                </div>
+                                <div class="skill-item">
+                                    <i class="skill-icon fas fa-paint-brush"></i>
+                                    <span class="skill-text">UI/UX & Graphic Design</span>
+                                </div>
+                                <div class="skill-item">
+                                    <i class="skill-icon fas fa-mobile-alt"></i>
+                                    <span class="skill-text">Mobile App Development</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
